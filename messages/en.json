@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "description": "Distributor of laboratory and medical equipment in Kazakhstan. Analyzers, reagents, microscopes, PCR equipment."
+  },
+  "nav": {
+    "catalog": "Catalog",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "contacts": "Contacts",
+    "phone": "+7 727 000 00 00",
+    "search_placeholder": "Search equipment...",
+    "catalog_all": "Full catalog"
+  },
+  "hero": {
+    "tag": "Laboratory Equipment Distributor",
+    "title": "Laboratory Equipment for Kazakhstan Healthcare",
+    "subtitle": "Supply, installation and service of professional laboratory equipment. Official distributor of leading global brands.",
+    "cta_primary": "View Catalog",
+    "cta_secondary": "Contact Us",
+    "stat1_value": "500+",
+    "stat1_label": "catalog items",
+    "stat2_value": "15+",
+    "stat2_label": "years on market",
+    "stat3_value": "300+",
+    "stat3_label": "clients in Kazakhstan"
+  },
+  "categories": {
+    "title": "Equipment Categories",
+    "subtitle": "Full range of laboratory and medical equipment",
+    "view_all": "All Categories",
+    "products_count": "products"
+  },
+  "why_us": {
+    "title": "Why Choose LabTech",
+    "item1_title": "Official Supply",
+    "item1_text": "Direct contracts with manufacturers. Original equipment with warranty.",
+    "item2_title": "Service & Maintenance",
+    "item2_text": "Own service center. Specialist visits throughout Kazakhstan.",
+    "item3_title": "Staff Training",
+    "item3_text": "Training and instruction for laboratory and technical staff.",
+    "item4_title": "Fast Delivery",
+    "item4_text": "Warehouse in Almaty. Delivery across Kazakhstan from 1 business day."
+  },
+  "catalog": {
+    "title": "Equipment Catalog",
+    "all_categories": "All Categories",
+    "filter": "Filter",
+    "sort": "Sort",
+    "sort_new": "Newest",
+    "sort_popular": "Popular",
+    "no_products": "No products found",
+    "load_more": "Load more",
+    "pagination_prev": "Back",
+    "pagination_next": "Next"
+  },
+  "product": {
+    "price_label": "Price",
+    "price_default": "On request",
+    "price_note": "Price is confirmed upon application",
+    "request_cta": "Request Quote",
+    "callback_cta": "Request Call",
+    "specs_title": "Technical Specifications",
+    "features_title": "Key Features",
+    "related_title": "Related Products",
+    "related_subtitle": "Other products from catalog",
+    "more": "Learn more →",
+    "bestseller": "Bestseller"
+  },
+  "lead_form": {
+    "title": "Request Commercial Proposal",
+    "subtitle": "Leave your contacts — we'll get back to you within 2 hours",
+    "name_label": "Your name",
+    "name_placeholder": "John Smith",
+    "phone_label": "Phone",
+    "phone_placeholder": "+7 (___) ___-__-__",
+    "email_label": "Email (optional)",
+    "email_placeholder": "john@company.kz",
+    "message_label": "Comment",
+    "message_placeholder": "Specify the model, quantity or other details...",
+    "submit": "Submit Request",
+    "submitting": "Sending...",
+    "success_title": "Request received!",
+    "success_text": "Our manager will contact you within 2 business hours.",
+    "error": "Error sending. Please try again.",
+    "required": "Required field",
+    "phone_invalid": "Please enter a valid phone number"
+  },
+  "callback_form": {
+    "title": "Request a Call",
+    "subtitle": "We'll call you back at a convenient time",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "phone_label": "Phone",
+    "phone_placeholder": "+7 (___) ___-__-__",
+    "submit": "Request Call",
+    "submitting": "Sending...",
+    "success": "Request received! We'll call soon."
+  },
+  "contact_section": {
+    "title": "Contact Us",
+    "subtitle": "Leave a request and we'll respond within 2 hours",
+    "address": "Almaty, Primernaya St., 123",
+    "phone": "+7 727 000 00 00",
+    "email": "info@labtech.kz",
+    "hours": "Mon–Fri 9:00–18:00"
+  },
+  "about": {
+    "title": "About Us",
+    "tag": "Professional Laboratory Equipment",
+    "subtitle": "LabTech LLP is Kazakhstan's leading distributor of laboratory and medical equipment since 2008.",
+    "mission_title": "Our Mission",
+    "mission_text": "To provide Kazakhstan's laboratories with reliable, certified equipment from the world's leading manufacturers.",
+    "values_title": "Our Values",
+    "value1_title": "Quality",
+    "value1_text": "Only original equipment with conformity certificates",
+    "value2_title": "Reliability",
+    "value2_text": "15 years on the market, 300+ satisfied clients across Kazakhstan",
+    "value3_title": "Expertise",
+    "value3_text": "Team of certified specialists with experience in laboratory diagnostics"
+  },
+  "services": {
+    "title": "Our Services",
+    "tag": "Full Support Cycle",
+    "subtitle": "We provide the full cycle — from supply to service",
+    "item1_title": "Equipment Supply",
+    "item1_text": "Official supply from world's leading manufacturers.",
+    "item2_title": "Installation & Commissioning",
+    "item2_text": "Professional installation by our certified specialists.",
+    "item3_title": "Staff Training",
+    "item3_text": "Training, instruction and staff certification.",
+    "item4_title": "Service & Maintenance",
+    "item4_text": "Scheduled maintenance, repair, supply of consumables and reagents.",
+    "item5_title": "Consulting",
+    "item5_text": "Help selecting equipment for your laboratory's needs. Free consultation.",
+    "item6_title": "Warranty Service",
+    "item6_text": "Warranty on all equipment. Replacement in case of manufacturing defect."
+  },
+  "contacts": {
+    "title": "Contacts",
+    "tag": "We Are Nearby",
+    "subtitle": "Contact us in any convenient way",
+    "address_title": "Address",
+    "address": "Almaty, Primernaya St., 123, office 456",
+    "phone_title": "Phone",
+    "email_title": "Email",
+    "hours_title": "Working hours",
+    "hours": "Monday – Friday: 9:00 – 18:00",
+    "map_title": "Find us on map"
+  },
+  "news": {
+    "title": "News",
+    "tag": "Latest",
+    "read_more": "Read more",
+    "no_news": "No news yet"
+  },
+  "search": {
+    "title": "Search Results",
+    "placeholder": "Search catalog...",
+    "results_for": "Results for",
+    "no_results": "Nothing found",
+    "no_results_hint": "Try a different query or",
+    "browse_catalog": "browse the catalog"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "catalog": "Catalog"
+  },
+  "footer": {
+    "company": "LabTech LLP",
+    "tagline": "Laboratory Equipment",
+    "catalog": "Catalog",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "contacts": "Contacts",
+    "copyright": "© 2008–2026 LabTech LLP. All rights reserved.",
+    "address": "Almaty, Primernaya St., 123",
+    "phone": "+7 727 000 00 00",
+    "email": "info@labtech.kz"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "back": "Back",
+    "back_to_catalog": "← Back to catalog",
+    "view_all": "View all",
+    "close": "Close",
+    "ru": "RU",
+    "kz": "KZ",
+    "en": "EN"
+  }
+}

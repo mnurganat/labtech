@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --blue: rgb(16, 117, 200);
+  --blue-dk: #0d4d9b;
+  --blue-lt: #F0F6FF;
+  --ink: #0F0F0F;
+  --ink2: #1C1C1C;
+  --gray: #6B7280;
+  --silver: #F4F4F4;
+  --white: #FFFFFF;
+  --border: #E5E5E5;
+  --background: #ffffff;
+  --foreground: #0F0F0F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-blue: var(--blue);
+  --color-blue-dk: var(--blue-dk);
+  --color-blue-lt: var(--blue-lt);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-gray: var(--gray);
+  --color-silver: var(--silver);
+  --color-border: var(--border);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 14px 28px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-primary:hover {
+  background: var(--blue-dk);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 13px 28px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  background: none;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-outline:hover {
+  border-color: var(--ink);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 20px;
+}
+
+.spec-key {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 500;
+  flex: 1;
+}
+
+.spec-val {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
+  flex: 1;
+}
+
+/* Footer grid */
+.grid-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 768px) {
+  .grid-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .grid-footer > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive layout helpers */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 120px);
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 1024px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+  .catalog-layout aside {
+    display: none;
+  }
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+  .product-layout > div:first-child {
+    position: static !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .grid-3col {
+    grid-template-columns: 1fr;
+  }
+}
