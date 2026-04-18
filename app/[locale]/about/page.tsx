@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import Breadcrumb from "@/components/layout/Breadcrumb";
+import ContactSection from "@/components/sections/ContactSection";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -17,6 +18,28 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `https://labtech.kz/${locale}/about` },
   };
 }
+
+const PARTNERS = [
+  { name: "URIT Medical", country: "Китай", category: "Гематология, биохимия" },
+  { name: "HUMAN Diagnostics", country: "Германия", category: "Биохимические реагенты" },
+  { name: "DNA-Technology", country: "Россия", category: "ПЦР-оборудование" },
+  { name: "Biobase", country: "Китай", category: "Боксы биологической безопасности" },
+  { name: "ELMI", country: "Латвия", category: "Центрифуги и термостаты" },
+  { name: "Biosan", country: "Латвия", category: "Лабораторное оборудование" },
+  { name: "Fujirebio", country: "Швеция", category: "ИФА-диагностика" },
+  { name: "West Medica", country: "Австрия", category: "Микроскопы" },
+  { name: "Immunotech", country: "Россия", category: "Иммунологические реагенты" },
+  { name: "SteriLance", country: "Китай", category: "Ланцеты и расходники" },
+];
+
+const STATS = [
+  { value: "15+", label: "лет на рынке Казахстана" },
+  { value: "250м²", label: "складские площади в Алматы" },
+  { value: "19+", label: "официальных производителей" },
+  { value: "79%", label: "постоянных клиентов" },
+  { value: "300+", label: "медицинских учреждений" },
+  { value: "16", label: "городов присутствия" },
+];
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -34,40 +57,69 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <Breadcrumb items={[{ label: t("about.title") }]} />
 
       {/* Hero */}
-      <section style={{ background: "var(--ink)", color: "white", padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--ink)", color: "white", padding: "80px 56px 64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("about.tag")}
           </div>
-          <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 20, letterSpacing: "-0.01em" }}>
             {t("about.title")}
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 620 }}>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.75, maxWidth: 600 }}>
             {t("about.subtitle")}
           </p>
         </div>
       </section>
 
+      {/* Stats grid */}
+      <section style={{ background: "var(--blue)", padding: "0 56px" }} className="px-5 md:px-14">
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}>
+            {STATS.map((s) => (
+              <div key={s.value} style={{ padding: "32px 24px", borderRight: "1px solid rgba(255,255,255,0.15)" }}>
+                <div style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 36, fontWeight: 700, color: "white", lineHeight: 1 }}>
+                  {s.value}
+                </div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginTop: 6, lineHeight: 1.4 }}>
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Mission */}
       <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
-        <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="grid-2col">
+        <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="grid-2col">
           <div>
-            <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 32, fontWeight: 700, color: "var(--ink)", marginBottom: 20 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
+              Наша миссия
+            </div>
+            <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 20, lineHeight: 1.25 }}>
               {t("about.mission_title")}
             </h2>
-            <p style={{ fontSize: 16, color: "var(--gray)", lineHeight: 1.8 }}>
+            <p style={{ fontSize: 15, color: "var(--gray)", lineHeight: 1.85 }}>
               {t("about.mission_text")}
             </p>
           </div>
-          <div style={{ background: "var(--blue-lt)", borderLeft: "4px solid var(--blue)", padding: "40px" }}>
-            <div style={{ fontSize: 48, fontWeight: 800, color: "var(--blue)", lineHeight: 1, marginBottom: 8 }}>15+</div>
-            <div style={{ fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>лет на рынке Казахстана</div>
-            <div style={{ height: 1, background: "var(--border)", margin: "24px 0" }} />
-            <div style={{ fontSize: 48, fontWeight: 800, color: "var(--blue)", lineHeight: 1, marginBottom: 8 }}>300+</div>
-            <div style={{ fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>клиентов по всему Казахстану</div>
-            <div style={{ height: 1, background: "var(--border)", margin: "24px 0" }} />
-            <div style={{ fontSize: 48, fontWeight: 800, color: "var(--blue)", lineHeight: 1, marginBottom: 8 }}>500+</div>
-            <div style={{ fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>позиций в каталоге</div>
+          <div style={{ background: "var(--silver)", padding: "40px 36px" }}>
+            <div style={{ fontSize: 13, color: "var(--gray)", lineHeight: 1.8, marginBottom: 24 }}>
+              ТОО «LabTech» — официальный представитель ведущих мировых производителей лабораторного оборудования в Казахстане. Работаем с клиническими, биохимическими, ПЦР и ИФА лабораториями, а также с ветеринарными службами.
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {[
+                "Государственные и частные медицинские учреждения",
+                "Университеты и научно-исследовательские институты",
+                "Ветеринарные лаборатории",
+                "Промышленные и пищевые лаборатории",
+              ].map((item) => (
+                <div key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <div style={{ width: 6, height: 6, background: "var(--blue)", borderRadius: "50%", flexShrink: 0, marginTop: 6 }} />
+                  <span style={{ fontSize: 13, color: "var(--ink)" }}>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +127,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       {/* Values */}
       <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
             {t("about.values_title")}
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }} className="grid-3col">
@@ -91,6 +143,31 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
         </div>
       </section>
+
+      {/* Partners */}
+      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <div style={{ marginBottom: 48 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
+              Официальные представительства
+            </div>
+            <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
+              Наши партнёры и поставщики
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 2 }}>
+            {PARTNERS.map((p) => (
+              <div key={p.name} style={{ background: "var(--silver)", padding: "24px 24px", borderLeft: "3px solid var(--blue)" }}>
+                <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)", marginBottom: 4 }}>{p.name}</div>
+                <div style={{ fontSize: 11, color: "var(--blue)", fontWeight: 600, marginBottom: 6 }}>{p.country}</div>
+                <div style={{ fontSize: 12, color: "var(--gray)" }}>{p.category}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContactSection locale={locale} />
     </>
   );
 }

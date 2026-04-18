@@ -39,9 +39,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: `/${locale}/catalog`, label: t("nav.catalog") },
+    { href: `/${locale}/osnashchenie-kdl`, label: t("nav.lab_setups") },
     { href: `/${locale}/about`, label: t("nav.about") },
     { href: `/${locale}/services`, label: t("nav.services") },
-    { href: `/${locale}/news`, label: t("nav.news") },
     { href: `/${locale}/contacts`, label: t("nav.contacts") },
   ];
 

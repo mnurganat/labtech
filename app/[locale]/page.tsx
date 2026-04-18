@@ -6,6 +6,7 @@ import { getCategories, getFeaturedProducts } from "@/lib/supabase/queries";
 import CategoryCard from "@/components/catalog/CategoryCard";
 import ProductCard from "@/components/catalog/ProductCard";
 import ContactSection from "@/components/sections/ContactSection";
+import KazakhstanMap from "@/components/sections/KazakhstanMap";
 import { CheckCircle, Truck, GraduationCap, Wrench } from "lucide-react";
 
 export function generateStaticParams() {
@@ -132,6 +133,9 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      {/* Kazakhstan delivery map */}
+      <KazakhstanMap />
 
       {/* Featured products */}
       {featuredProducts.length > 0 && (

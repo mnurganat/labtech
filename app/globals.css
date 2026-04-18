@@ -171,6 +171,12 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .lab-setup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .grid-2col {
     grid-template-columns: 1fr;

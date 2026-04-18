@@ -1,21 +1,22 @@
 {
   "meta": {
-    "description": "Distributor of laboratory and medical equipment in Kazakhstan. Analyzers, reagents, microscopes, PCR equipment."
+    "description": "Official distributor of laboratory and medical equipment in Kazakhstan. Analyzers, reagents, microscopes, PCR equipment. Delivery across Kazakhstan."
   },
   "nav": {
     "catalog": "Catalog",
+    "lab_setups": "Lab Setup",
     "about": "About",
     "services": "Services",
     "news": "News",
     "contacts": "Contacts",
-    "phone": "+7 727 000 00 00",
+    "phone": "+7 (727) 327-74-77",
     "search_placeholder": "Search equipment...",
     "catalog_all": "Full catalog"
   },
   "hero": {
-    "tag": "Laboratory Equipment Distributor",
+    "tag": "Official Laboratory Equipment Distributor",
     "title": "Laboratory Equipment for Kazakhstan Healthcare",
-    "subtitle": "Supply, installation and service of professional laboratory equipment. Official distributor of leading global brands.",
+    "subtitle": "Supply, installation and service of professional laboratory equipment. Official representative of URIT, HUMAN, Biobase, DNA-Technology and 15+ manufacturers.",
     "cta_primary": "View Catalog",
     "cta_secondary": "Contact Us",
     "stat1_value": "500+",
@@ -34,13 +35,13 @@
   "why_us": {
     "title": "Why Choose LabTech",
     "item1_title": "Official Supply",
-    "item1_text": "Direct contracts with manufacturers. Original equipment with warranty.",
+    "item1_text": "Direct contracts with 19+ manufacturers. Original equipment with conformity certificates and warranty.",
     "item2_title": "Service & Maintenance",
-    "item2_text": "Own service center. Specialist visits throughout Kazakhstan.",
+    "item2_text": "Own service center in Almaty. Certified specialist visits throughout Kazakhstan.",
     "item3_title": "Staff Training",
-    "item3_text": "Training and instruction for laboratory and technical staff.",
+    "item3_text": "Training, instruction and certification for lab and technical staff. On-site training in any city.",
     "item4_title": "Fast Delivery",
-    "item4_text": "Warehouse in Almaty. Delivery across Kazakhstan from 1 business day."
+    "item4_text": "250m² warehouse in Almaty. Delivery across Kazakhstan from 1 business day."
   },
   "catalog": {
     "title": "Equipment Catalog",
@@ -100,53 +101,52 @@
   "contact_section": {
     "title": "Contact Us",
     "subtitle": "Leave a request and we'll respond within 2 hours",
-    "address": "Almaty, Primernaya St., 123",
-    "phone": "+7 727 000 00 00",
+    "address": "Almaty, Alatau district, Momyshuly St., 18",
+    "phone": "+7 (727) 327-74-77",
     "email": "info@labtech.kz",
     "hours": "Mon–Fri 9:00–18:00"
   },
   "about": {
     "title": "About Us",
-    "tag": "Professional Laboratory Equipment",
-    "subtitle": "LabTech LLP is Kazakhstan's leading distributor of laboratory and medical equipment since 2008.",
+    "tag": "LabTech LLP — Official Distributor",
+    "subtitle": "Supplier of laboratory and medical equipment in Kazakhstan. Working with public and private medical institutions since 2008.",
     "mission_title": "Our Mission",
-    "mission_text": "To provide Kazakhstan's laboratories with reliable, certified equipment from the world's leading manufacturers.",
+    "mission_text": "To provide Kazakhstan's laboratories with reliable, certified equipment from the world's leading manufacturers. We deliver not just equipment — we provide the full cycle: from selection and supply to installation, staff training and service.",
     "values_title": "Our Values",
     "value1_title": "Quality",
-    "value1_text": "Only original equipment with conformity certificates",
+    "value1_text": "Only original equipment with conformity certificates and manufacturer's warranty.",
     "value2_title": "Reliability",
-    "value2_text": "15 years on the market, 300+ satisfied clients across Kazakhstan",
+    "value2_text": "15 years on the market, 79% repeat clients — the best proof of trust.",
     "value3_title": "Expertise",
-    "value3_text": "Team of certified specialists with experience in laboratory diagnostics"
+    "value3_text": "Team of certified specialists with deep experience in laboratory diagnostics."
   },
   "services": {
     "title": "Our Services",
     "tag": "Full Support Cycle",
-    "subtitle": "We provide the full cycle — from supply to service",
+    "subtitle": "From equipment selection to service maintenance — we support clients at every stage",
     "item1_title": "Equipment Supply",
-    "item1_text": "Official supply from world's leading manufacturers.",
+    "item1_text": "Official supply from 19+ world's leading manufacturers. Customs clearance, certification, cargo insurance.",
     "item2_title": "Installation & Commissioning",
-    "item2_text": "Professional installation by our certified specialists.",
+    "item2_text": "Professional installation by our certified engineers. Working across Kazakhstan.",
     "item3_title": "Staff Training",
-    "item3_text": "Training, instruction and staff certification.",
+    "item3_text": "Training, instruction and certification of laboratory and technical personnel. On-site training in any city.",
     "item4_title": "Service & Maintenance",
-    "item4_text": "Scheduled maintenance, repair, supply of consumables and reagents.",
-    "item5_title": "Consulting",
-    "item5_text": "Help selecting equipment for your laboratory's needs. Free consultation.",
+    "item4_text": "Scheduled maintenance, repair of any complexity, supply of original consumables and reagents.",
+    "item5_title": "Selection & Consulting",
+    "item5_text": "Free consultation on equipment selection. Help with technical specifications for tenders.",
     "item6_title": "Warranty Service",
-    "item6_text": "Warranty on all equipment. Replacement in case of manufacturing defect."
+    "item6_text": "Official warranty on all equipment. Replacement of defective units in the shortest possible time."
   },
   "contacts": {
     "title": "Contacts",
     "tag": "We Are Nearby",
     "subtitle": "Contact us in any convenient way",
     "address_title": "Address",
-    "address": "Almaty, Primernaya St., 123, office 456",
+    "address": "Almaty, Alatau district, Momyshuly St., 18",
     "phone_title": "Phone",
     "email_title": "Email",
     "hours_title": "Working hours",
-    "hours": "Monday – Friday: 9:00 – 18:00",
-    "map_title": "Find us on map"
+    "hours": "Monday – Friday: 9:00 – 18:00"
   },
   "news": {
     "title": "News",
@@ -170,13 +170,16 @@
     "company": "LabTech LLP",
     "tagline": "Laboratory Equipment",
     "catalog": "Catalog",
+    "lab_setups": "Lab Setup",
     "about": "About",
     "services": "Services",
     "news": "News",
     "contacts": "Contacts",
     "copyright": "© 2008–2026 LabTech LLP. All rights reserved.",
-    "address": "Almaty, Primernaya St., 123",
-    "phone": "+7 727 000 00 00",
+    "address": "Almaty, Alatau district, Momyshuly St., 18",
+    "phone": "+7 (727) 327-74-77",
+    "phone2": "+7 (727) 220-81-42",
+    "whatsapp": "+7 701 879 69 04",
     "email": "info@labtech.kz"
   },
   "common": {
