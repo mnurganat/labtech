@@ -38,6 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...urls("/news", 0.8, "weekly"),
     ...urls("/contacts", 0.6, "monthly"),
     ...urls("/osnashchenie-kdl", 0.8, "monthly"),
+    ...urls("/partners", 0.7, "monthly"),
     ...categorySlugs.flatMap((slug) => urls(`/catalog/${slug}`, 0.8, "weekly")),
     ...productSlugs.flatMap((slug) => urls(`/catalog/all/${slug}`, 0.75, "monthly")),
   ];

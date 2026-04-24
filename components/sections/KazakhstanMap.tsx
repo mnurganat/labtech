@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { CITIES, STATS, type CityDelivery } from "@/data/deliveries";
 import kazakhstanGeo from "@/data/kazakhstan.json";
 
@@ -27,6 +28,7 @@ function ringToPath(ring: number[][]): string {
 }
 
 export default function KazakhstanMap() {
+  const t = useTranslations("map");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -69,7 +71,7 @@ export default function KazakhstanMap() {
               marginBottom: 14,
             }}
           >
-            География поставок
+            {t("tag")}
           </div>
           <h2
             style={{
@@ -81,7 +83,7 @@ export default function KazakhstanMap() {
               marginBottom: 20,
             }}
           >
-            Работаем по всему Казахстану
+            {t("title")}
           </h2>
           <p
             style={{
@@ -90,7 +92,7 @@ export default function KazakhstanMap() {
               lineHeight: 1.7,
             }}
           >
-            За 15 лет мы поставили оборудование в сотни лабораторий, клиник и университетов по всей стране. Нажмите на город чтобы увидеть детали.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -106,9 +108,9 @@ export default function KazakhstanMap() {
           }}
         >
           {[
-            { v: `${STATS.totalDeliveries}+`, l: "поставок оборудования" },
-            { v: STATS.cities, l: "городов Казахстана" },
-            { v: STATS.years, l: "лет на рынке" },
+            { v: `${STATS.totalDeliveries}+`, l: t("stat1_label") },
+            { v: STATS.cities, l: t("stat2_label") },
+            { v: STATS.years, l: t("stat3_label") },
           ].map((s) => (
             <div key={s.l}>
               <div
@@ -260,10 +262,10 @@ export default function KazakhstanMap() {
                   {hoveredCity.name}
                 </div>
                 <div style={{ fontSize: 13, color: "var(--blue)", fontWeight: 600 }}>
-                  {hoveredCity.deliveries} поставок · {hoveredCity.clients.length} клиентов
+                  {hoveredCity.deliveries} {t("deliveries_label")} · {hoveredCity.clients.length} {t("clients_label").toLowerCase()}
                 </div>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 8 }}>
-                  Нажмите чтобы увидеть детали
+                  {t("click_hint")}
                 </div>
               </div>
             )}
@@ -294,7 +296,7 @@ export default function KazakhstanMap() {
                   lineHeight: 1,
                   padding: 4,
                 }}
-                aria-label="Закрыть"
+                aria-label={t("city_label")}
               >
                 ×
               </button>
@@ -308,7 +310,7 @@ export default function KazakhstanMap() {
                   marginBottom: 10,
                 }}
               >
-                Город
+                {t("city_label")}
               </div>
               <h3
                 style={{
@@ -328,7 +330,7 @@ export default function KazakhstanMap() {
                     {selectedCity.deliveries}
                   </div>
                   <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 2 }}>
-                    поставок
+                    {t("deliveries_label")}
                   </div>
                 </div>
                 <div>
@@ -336,14 +338,14 @@ export default function KazakhstanMap() {
                     {selectedCity.clients.length}
                   </div>
                   <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 2 }}>
-                    клиентов
+                    {t("clients_label").toLowerCase()}
                   </div>
                 </div>
               </div>
 
               <div style={{ marginBottom: 20 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
-                  Клиенты
+                  {t("clients_label")}
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {selectedCity.clients.map((c) => (
@@ -364,7 +366,7 @@ export default function KazakhstanMap() {
 
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
-                  Популярное оборудование
+                  {t("equipment_label")}
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {selectedCity.topEquipment.map((e) => (

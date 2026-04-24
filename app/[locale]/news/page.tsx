@@ -63,9 +63,9 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       <Breadcrumb items={[{ label: t("news.title") }]} />
 
       {/* Hero */}
-      <section style={{ background: "var(--ink)", color: "white", padding: "64px 56px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", padding: "64px 56px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("news.tag")}
           </div>
           <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1 }}>

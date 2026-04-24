@@ -14,12 +14,26 @@ export default async function LabSetupsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale });
+
+  const steps = [
+    { n: t("lab_setups.step1_n"), title: t("lab_setups.step1_title"), text: t("lab_setups.step1_text") },
+    { n: t("lab_setups.step2_n"), title: t("lab_setups.step2_title"), text: t("lab_setups.step2_text") },
+    { n: t("lab_setups.step3_n"), title: t("lab_setups.step3_title"), text: t("lab_setups.step3_text") },
+    { n: t("lab_setups.step4_n"), title: t("lab_setups.step4_title"), text: t("lab_setups.step4_text") },
+  ];
+
+  const stats = [
+    { value: t("lab_setups.stat1_value"), label: t("lab_setups.stat1_label") },
+    { value: t("lab_setups.stat2_value"), label: t("lab_setups.stat2_label") },
+    { value: t("lab_setups.stat3_value"), label: t("lab_setups.stat3_label") },
+  ];
 
   return (
     <>
       {/* Hero */}
       <section
-        style={{ background: "var(--ink)", color: "white", padding: "80px 56px 64px" }}
+        style={{ background: "var(--blue)", color: "white", padding: "80px 56px 64px" }}
         className="px-5 md:px-14"
       >
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
@@ -27,13 +41,13 @@ export default async function LabSetupsPage({
             style={{
               fontSize: 11,
               fontWeight: 700,
-              color: "var(--blue)",
+              color: "rgba(255,255,255,0.65)",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
               marginBottom: 16,
             }}
           >
-            Услуги
+            {t("lab_setups.tag")}
           </div>
           <h1
             style={{
@@ -46,7 +60,7 @@ export default async function LabSetupsPage({
               letterSpacing: "-0.01em",
             }}
           >
-            Оснащение клинико-диагностических лабораторий
+            {t("lab_setups.title")}
           </h1>
           <p
             style={{
@@ -56,9 +70,7 @@ export default async function LabSetupsPage({
               maxWidth: 560,
             }}
           >
-            Подбираем и поставляем полную комплектацию лабораторий под ключ —
-            от анализаторов до мебели. Работаем с государственными и частными
-            медицинскими учреждениями по всему Казахстану.
+            {t("lab_setups.subtitle")}
           </p>
 
           {/* Stats */}
@@ -72,11 +84,7 @@ export default async function LabSetupsPage({
               flexWrap: "wrap",
             }}
           >
-            {[
-              { value: "4", label: "типа лабораторий" },
-              { value: "60+", label: "позиций в каждой комплектации" },
-              { value: "15+", label: "лет опыта оснащения" },
-            ].map((s) => (
+            {stats.map((s) => (
               <div key={s.label}>
                 <div
                   style={{
@@ -117,15 +125,10 @@ export default async function LabSetupsPage({
               marginBottom: 32,
             }}
           >
-            Как мы работаем
+            {t("lab_setups.how_title")}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 2 }}>
-            {[
-              { n: "01", title: "Анализ задач", text: "Изучаем профиль лаборатории, объём анализов, бюджет и требования регуляторов." },
-              { n: "02", title: "Подбор комплектации", text: "Предлагаем оптимальный список оборудования с несколькими ценовыми вариантами." },
-              { n: "03", title: "Поставка и монтаж", text: "Доставляем, монтируем и подключаем всё оборудование силами наших инженеров." },
-              { n: "04", title: "Обучение и сервис", text: "Обучаем персонал работе и берём оборудование на сервисное обслуживание." },
-            ].map((step) => (
+            {steps.map((step) => (
               <div key={step.n} style={{ background: "white", padding: "28px 24px" }}>
                 <div
                   style={{

@@ -6,6 +6,15 @@ export default function Footer() {
   const t = useTranslations();
   const locale = useLocale();
 
+  const catalogLinks = [
+    { key: "cat1", slug: "kliniko-diagnosticheskaya" },
+    { key: "cat2", slug: "mikroskopy" },
+    { key: "cat3", slug: "obshchelaboratornoe" },
+    { key: "cat4", slug: "reagenty" },
+    { key: "cat5", slug: "veterinariya" },
+    { key: "cat6", slug: "nebulayizery" },
+  ];
+
   return (
     <footer style={{ background: "var(--ink)", color: "white" }}>
       <div style={{ padding: "60px 56px 40px", maxWidth: 1400, margin: "0 auto" }} className="px-5 md:px-14">
@@ -27,7 +36,7 @@ export default function Footer() {
               </div>
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginBottom: 24, maxWidth: 280 }}>
-              Официальный дистрибьютор лабораторного оборудования в Казахстане. 19+ производителей, 15 лет опыта.
+              {t("footer.description")}
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
@@ -37,10 +46,10 @@ export default function Footer() {
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <Phone size={14} style={{ color: "var(--blue)", flexShrink: 0 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                  <a href={`tel:+77273277477`} style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
+                  <a href="tel:+77273277477" style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
                     {t("footer.phone")}
                   </a>
-                  <a href={`tel:+77272208142`} style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
+                  <a href="tel:+77272208142" style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
                     {t("footer.phone2")}
                   </a>
                 </div>
@@ -54,7 +63,7 @@ export default function Footer() {
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <MessageCircle size={14} style={{ color: "var(--blue)", flexShrink: 0 }} />
                 <a
-                  href={`https://wa.me/77018796904`}
+                  href="https://wa.me/77018796904"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}
@@ -71,16 +80,9 @@ export default function Footer() {
               {t("footer.catalog")}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {[
-                { label: "КДЛ", href: `/${locale}/catalog` },
-                { label: "Микроскопы", href: `/${locale}/catalog` },
-                { label: "Центрифуги", href: `/${locale}/catalog` },
-                { label: "Реагенты", href: `/${locale}/catalog` },
-                { label: "Ветеринария", href: `/${locale}/catalog` },
-                { label: "Небулайзеры", href: `/${locale}/catalog` },
-              ].map((item) => (
-                <Link key={item.label} href={item.href} style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
-                  {item.label}
+              {catalogLinks.map((item) => (
+                <Link key={item.key} href={`/${locale}/catalog/${item.slug}`} style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
+                  {t(`footer.${item.key}` as any)}
                 </Link>
               ))}
             </div>
@@ -89,13 +91,14 @@ export default function Footer() {
           {/* Company links */}
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20 }}>
-              Компания
+              {t("footer.company_section")}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
                 { href: `/${locale}/about`, label: t("footer.about") },
                 { href: `/${locale}/services`, label: t("footer.services") },
                 { href: `/${locale}/osnashchenie-kdl`, label: t("footer.lab_setups") },
+                { href: `/${locale}/partners`, label: t("footer.partners") },
                 { href: `/${locale}/news`, label: t("footer.news") },
                 { href: `/${locale}/contacts`, label: t("footer.contacts") },
               ].map((item) => (
@@ -114,13 +117,13 @@ export default function Footer() {
             <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 24 }}>
               <Clock size={14} style={{ color: "var(--blue)", flexShrink: 0, marginTop: 2 }} />
               <span style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.6 }}>
-                Пн–Пт: 9:00–18:00<br />
-                Сб–Вс: выходной
+                {t("footer.hours")}<br />
+                {t("footer.hours_weekend")}
               </span>
             </div>
 
             <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16 }}>
-              Соцсети
+              {t("footer.socials")}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <a
@@ -137,7 +140,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}
               >
-                WhatsApp чат
+                {t("footer.whatsapp_chat")}
               </a>
             </div>
           </div>

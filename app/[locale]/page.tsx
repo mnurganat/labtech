@@ -20,8 +20,15 @@ const MOCK_CATEGORIES = [
   { id: "4", slug: "reagenty", name: "Реагенты и красители", parent_id: null, image_url: null, sort_order: 4, is_active: true, created_at: "" },
   { id: "5", slug: "veterinariya", name: "Ветеринария", parent_id: null, image_url: null, sort_order: 5, is_active: true, created_at: "" },
   { id: "6", slug: "chistye-pomeshcheniya", name: "Чистые помещения", parent_id: null, image_url: null, sort_order: 6, is_active: true, created_at: "" },
-  { id: "7", slug: "laboratoraya-posuda", name: "Лабораторная посуда", parent_id: null, image_url: null, sort_order: 7, is_active: true, created_at: "" },
+  { id: "7", slug: "laboratornaya-posuda", name: "Лабораторная посуда", parent_id: null, image_url: null, sort_order: 7, is_active: true, created_at: "" },
   { id: "8", slug: "nebulayizery", name: "Небулайзеры", parent_id: null, image_url: null, sort_order: 8, is_active: true, created_at: "" },
+  { id: "9", slug: "pcr-diagnostika", name: "ПЦР-диагностика", parent_id: null, image_url: null, sort_order: 9, is_active: true, created_at: "" },
+  { id: "10", slug: "koagulyatsiya", name: "Коагулология", parent_id: null, image_url: null, sort_order: 10, is_active: true, created_at: "" },
+  { id: "11", slug: "immunologiya", name: "Иммунология и серология", parent_id: null, image_url: null, sort_order: 11, is_active: true, created_at: "" },
+  { id: "12", slug: "gematologiya", name: "Гематология", parent_id: null, image_url: null, sort_order: 12, is_active: true, created_at: "" },
+  { id: "13", slug: "biohimiya", name: "Биохимия", parent_id: null, image_url: null, sort_order: 13, is_active: true, created_at: "" },
+  { id: "14", slug: "mikrobiologiya", name: "Микробиология", parent_id: null, image_url: null, sort_order: 14, is_active: true, created_at: "" },
+  { id: "15", slug: "raskhodnye-materialy", name: "Расходные материалы", parent_id: null, image_url: null, sort_order: 15, is_active: true, created_at: "" },
 ];
 
 export default async function HomePage({
@@ -58,9 +65,9 @@ export default async function HomePage({
   return (
     <>
       {/* Hero */}
-      <section style={{ background: "var(--ink)", color: "white", padding: "100px 56px 80px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", padding: "100px 56px 80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 20 }}>
             {t("hero.tag")}
           </div>
           <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 24, letterSpacing: "-0.01em" }}>
@@ -78,7 +85,7 @@ export default async function HomePage({
             </Link>
           </div>
           {/* Stats */}
-          <div style={{ display: "flex", gap: 48, marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.1)", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 48, marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.15)", flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.value}>
                 <div style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 36, fontWeight: 700, color: "white" }}>{s.value}</div>

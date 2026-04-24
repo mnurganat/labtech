@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { LAB_SETUPS, type LabSetup } from "@/data/labSetups";
 import Link from "next/link";
 
@@ -13,6 +14,7 @@ function groupByCategory(items: LabSetup["items"]) {
 }
 
 export default function LabSetupsSection({ locale }: { locale: string }) {
+  const t = useTranslations("lab_setups");
   const [activeId, setActiveId] = useState(LAB_SETUPS[0].id);
   const active = LAB_SETUPS.find((l) => l.id === activeId)!;
   const grouped = groupByCategory(active.items);
@@ -78,7 +80,7 @@ export default function LabSetupsSection({ locale }: { locale: string }) {
               marginBottom: 12,
             }}
           >
-            Комплектация
+            {t("kit_label")}
           </div>
           <h2
             style={{
@@ -105,10 +107,10 @@ export default function LabSetupsSection({ locale }: { locale: string }) {
             }}
           >
             <div style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", marginBottom: 4 }}>
-              {active.items.length} позиций в комплектации
+              {active.items.length} {t("kit_count_suffix")}
             </div>
             <div style={{ fontSize: 12, color: "var(--gray)" }}>
-              Подбираем под бюджет и задачи клиента
+              {t("kit_note")}
             </div>
           </div>
 
@@ -117,7 +119,7 @@ export default function LabSetupsSection({ locale }: { locale: string }) {
             className="btn-primary"
             style={{ display: "inline-block" }}
           >
-            Запросить комплектацию
+            {t("kit_cta")}
           </Link>
         </div>
 
