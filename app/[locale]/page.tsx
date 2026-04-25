@@ -83,6 +83,30 @@ export default async function HomePage({
             <Link href={`/${locale}/contacts`} className="btn-outline" style={{ borderColor: "rgba(255,255,255,0.3)", color: "white" }}>
               {t("hero.cta_secondary")}
             </Link>
+            <a
+              href="https://l.kaspi.kz/shop/E4RNuNw1Tgeoons"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "0 20px",
+                height: 44,
+                background: "#FF0000",
+                color: "white",
+                fontWeight: 700,
+                fontSize: 13,
+                textDecoration: "none",
+                letterSpacing: "0.02em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white" style={{ flexShrink: 0 }}>
+                <path d="M7 4h14v2H7zM3 4h2v2H3zM3 11h2v2H3zM7 11h14v2H7zM3 18h2v2H3zM7 18h14v2H7z"/>
+              </svg>
+              {t("hero.cta_kaspi")}
+            </a>
           </div>
           {/* Stats */}
           <div style={{ display: "flex", gap: 48, marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.15)", flexWrap: "wrap" }}>

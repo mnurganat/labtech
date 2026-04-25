@@ -41,7 +41,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
     email: "info@labtech.kz",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "мкр. Алатау, ул. Момышұлы, 18",
+      streetAddress: "мкр. Аксай-4, 117а, цокольный этаж",
       addressLocality: "Алматы",
       addressCountry: "KZ",
     },
@@ -200,7 +200,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
                 {t("contacts.address")}
               </div>
               <a
-                href="https://2gis.kz/almaty/search/%D0%9C%D0%BE%D0%BC%D1%8B%D1%88%D1%83%D0%BB%D1%8B%2018"
+                href="https://go.2gis.com/Dfwoj"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: 12, fontWeight: 700, color: "var(--blue)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
