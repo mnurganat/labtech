@@ -22,14 +22,18 @@ export default function ContactSection({ locale }: { locale: string }) {
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 32 }}>
             {[
-              { icon: MapPin, text: t("contact_section.address") },
-              { icon: Phone, text: t("contact_section.phone") },
-              { icon: Mail, text: t("contact_section.email") },
-              { icon: Clock, text: t("contact_section.hours") },
-            ].map(({ icon: Icon, text }) => (
+              { icon: MapPin, text: t("contact_section.address"), href: "https://go.2gis.com/Dfwoj" },
+              { icon: Phone, text: t("contact_section.phone"), href: `tel:${t("contact_section.phone").replace(/\s/g,"")}` },
+              { icon: Mail, text: t("contact_section.email"), href: `mailto:${t("contact_section.email")}` },
+              { icon: Clock, text: t("contact_section.hours"), href: null },
+            ].map(({ icon: Icon, text, href }) => (
               <div key={text} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                 <Icon size={16} style={{ color: "var(--blue)", flexShrink: 0, marginTop: 2 }} />
-                <span style={{ fontSize: 14, color: "rgba(255,255,255,0.7)" }}>{text}</span>
+                {href ? (
+                  <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>{text}</a>
+                ) : (
+                  <span style={{ fontSize: 14, color: "rgba(255,255,255,0.7)" }}>{text}</span>
+                )}
               </div>
             ))}
           </div>

@@ -41,7 +41,9 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                 <MapPin size={14} style={{ color: "var(--blue)", flexShrink: 0, marginTop: 2 }} />
-                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", lineHeight: 1.5 }}>{t("footer.address")}</span>
+                <a href="https://go.2gis.com/Dfwoj" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, textDecoration: "none" }}>
+                  {t("footer.address")}
+                </a>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <Phone size={14} style={{ color: "var(--blue)", flexShrink: 0 }} />

@@ -81,9 +81,14 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
                 icon: MapPin,
                 label: t("contacts.address_title"),
                 content: (
-                  <p style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)", lineHeight: 1.5 }}>
+                  <a
+                    href="https://go.2gis.com/Dfwoj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)", lineHeight: 1.5, textDecoration: "none", display: "block" }}
+                  >
                     {t("contacts.address")}
-                  </p>
+                  </a>
                 ),
               },
               {
