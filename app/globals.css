@@ -197,3 +197,8 @@ body {
 .partner-card-link:hover > div {
   background: #e8edf2;
 }
+
+.partner-card-link:hover .partner-logo {
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
+}
