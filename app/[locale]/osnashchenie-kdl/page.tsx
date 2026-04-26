@@ -33,7 +33,7 @@ export default async function LabSetupsPage({
     <>
       {/* Hero */}
       <section
-        style={{ background: "var(--blue)", color: "white", padding: "80px 56px 64px" }}
+        style={{ background: "var(--blue)", color: "white", paddingTop: "80px", paddingBottom: "64px" }}
         className="px-5 md:px-14"
       >
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
@@ -113,7 +113,7 @@ export default async function LabSetupsPage({
       </section>
 
       {/* How it works */}
-      <section style={{ padding: "64px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "64px", paddingBottom: "64px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div
             style={{
@@ -154,7 +154,7 @@ export default async function LabSetupsPage({
       </section>
 
       {/* Lab setups tabs */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <LabSetupsSection locale={locale} />
         </div>

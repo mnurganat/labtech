@@ -94,7 +94,7 @@ export default async function CategoryPage({
           { label: catName },
         ]}
       />
-      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "60px 56px" }} className="px-5 md:px-14">
+      <div style={{ maxWidth: 1400, margin: "0 auto", paddingTop: "60px", paddingBottom: "60px" }} className="px-5 md:px-14">
         <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 40, alignItems: "start" }} className="catalog-layout">
           {/* Sidebar */}
           <aside>

@@ -187,6 +187,40 @@ body {
   }
 }
 
+/* ── Mobile fixes ──────────────────────────────────────────────────────── */
+.grid-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.kazakhstan-map-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .grid-contact {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .kazakhstan-map-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-3col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-3col {
+    grid-template-columns: 1fr;
+  }
+}
+/* ────────────────────────────────────────────────────────────────────────── */
+
 .client-logo-link:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }

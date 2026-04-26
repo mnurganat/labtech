@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer style={{ background: "var(--ink)", color: "white" }}>
-      <div style={{ padding: "60px 56px 40px", maxWidth: 1400, margin: "0 auto" }} className="px-5 md:px-14">
+      <div style={{ paddingTop: "60px", paddingBottom: "40px", maxWidth: 1400, margin: "0 auto" }} className="px-5 md:px-14">
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.2fr", gap: 48 }} className="grid-footer">
 
           {/* Brand + contacts */}
@@ -150,7 +150,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", padding: "20px 56px" }} className="px-5 md:px-14">
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "20px", paddingBottom: "20px" }} className="px-5 md:px-14">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", maxWidth: 1400, margin: "0 auto", flexWrap: "wrap", gap: 8 }}>
           <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>{t("footer.copyright")}</span>
           <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>labtech.kz</span>

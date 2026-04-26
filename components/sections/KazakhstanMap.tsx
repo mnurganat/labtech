@@ -52,7 +52,7 @@ export default function KazakhstanMap() {
       style={{
         background: "var(--ink)",
         color: "white",
-        padding: "100px 56px",
+        paddingTop: "100px", paddingBottom: "100px",
         position: "relative",
         overflow: "hidden",
       }}

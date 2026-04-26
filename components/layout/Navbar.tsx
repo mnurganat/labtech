@@ -120,7 +120,7 @@ export default function Navbar() {
                   padding: "6px 12px",
                   fontSize: 13,
                   outline: "none",
-                  width: 200,
+                  width: "min(200px, 40vw)",
                   fontFamily: "inherit",
                 }}
               />

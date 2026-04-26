@@ -65,7 +65,7 @@ export default async function HomePage({
   return (
     <>
       {/* Hero */}
-      <section style={{ background: "var(--blue)", color: "white", padding: "100px 56px 80px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", paddingTop: "100px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 20 }}>
             {t("hero.tag")}
@@ -121,7 +121,7 @@ export default async function HomePage({
       </section>
 
       {/* Categories */}
-      <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40, flexWrap: "wrap", gap: 16 }}>
             <div>
@@ -145,7 +145,7 @@ export default async function HomePage({
       </section>
 
       {/* Why Us */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 10 }}>
             {t("why_us.title")}
@@ -170,7 +170,7 @@ export default async function HomePage({
 
       {/* Featured products */}
       {featuredProducts.length > 0 && (
-        <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+        <section style={{ paddingTop: "80px", paddingBottom: "80px", background: "var(--silver)" }} className="px-5 md:px-14">
           <div style={{ maxWidth: 1400, margin: "0 auto" }}>
             <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
               {t("product.bestseller")}

@@ -31,7 +31,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       <Breadcrumb items={[{ label: t("partners.title") }]} />
 
       {/* Hero */}
-      <section style={{ background: "var(--blue)", color: "white", padding: "80px 56px 64px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", paddingTop: "80px", paddingBottom: "64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("partners.tag")}
@@ -59,7 +59,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Partners grid */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
             {t("partners.tag")}
@@ -72,7 +72,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Become a partner CTA */}
-      <section style={{ background: "var(--silver)", padding: "64px 56px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--silver)", paddingTop: "64px", paddingBottom: "64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>

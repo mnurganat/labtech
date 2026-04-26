@@ -60,7 +60,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
       <Breadcrumb items={[{ label: t("contacts.title") }]} />
 
       {/* Hero */}
-      <section style={{ background: "var(--blue)", color: "white", padding: "64px 56px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", paddingTop: "64px", paddingBottom: "64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("contacts.tag")}
@@ -73,7 +73,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Main info cards */}
-      <section style={{ padding: "60px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "60px", paddingBottom: "60px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 2, marginBottom: 2 }}>
             {[
@@ -149,7 +149,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Departments */}
-      <section style={{ padding: "64px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "64px", paddingBottom: "64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
             {t("contacts.departments_tag")}
@@ -218,7 +218,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Contact form */}
-      <section style={{ padding: "64px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "64px", paddingBottom: "64px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
             {t("lead_form.title")}

@@ -51,7 +51,7 @@ export default async function CatalogPage({
   return (
     <>
       <Breadcrumb items={[{ label: t("breadcrumb.catalog") }]} />
-      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "60px 56px" }} className="px-5 md:px-14">
+      <div style={{ maxWidth: 1400, margin: "0 auto", paddingTop: "60px", paddingBottom: "60px" }} className="px-5 md:px-14">
         <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 700, color: "var(--ink)", marginBottom: 12 }}>
           {t("catalog.title")}
         </h1>

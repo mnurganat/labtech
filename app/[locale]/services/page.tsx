@@ -47,7 +47,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       <Breadcrumb items={[{ label: t("services.title") }]} />
 
       {/* Hero */}
-      <section style={{ background: "var(--blue)", color: "white", padding: "80px 56px 64px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", paddingTop: "80px", paddingBottom: "64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("services.tag")}
@@ -71,7 +71,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Services grid */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 2 }}>
             {SERVICE_KEYS.map(({ icon: Icon, key }, i) => (
@@ -102,7 +102,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Guarantees strip */}
-      <section style={{ background: "var(--blue)", padding: "60px 56px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", paddingTop: "60px", paddingBottom: "60px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 32 }}>
             {guarantees.map(({ icon: Icon, label, sub }) => (

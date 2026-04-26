@@ -217,7 +217,7 @@ export default async function ProductPage({
 
       {/* Related products */}
       {relatedProducts.length > 0 && (
-        <section style={{ padding: "80px 56px", background: "var(--silver)", borderTop: "1px solid var(--border)" }} className="px-5 md:px-14">
+        <section style={{ paddingTop: "80px", paddingBottom: "80px", background: "var(--silver)", borderTop: "1px solid var(--border)" }} className="px-5 md:px-14">
           <div style={{ maxWidth: 1400, margin: "0 auto" }}>
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--blue)", marginBottom: 10 }}>
               {t("product.related_title")}

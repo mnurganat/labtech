@@ -11,8 +11,8 @@ export default function ContactSection({ locale }: { locale: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <section style={{ padding: "80px 56px", background: "var(--ink)", color: "white" }} className="px-5 md:px-14">
-      <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="grid-contact">
+    <section style={{ paddingTop: "80px", paddingBottom: "80px", background: "var(--ink)", color: "white" }} className="px-5 md:px-14">
+      <div style={{ maxWidth: 1400, margin: "0 auto" }} className="grid-contact">
         <div>
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("contact_section.title")}

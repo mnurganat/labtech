@@ -22,7 +22,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <div
       style={{
-        padding: "16px 56px",
+        paddingTop: "16px", paddingBottom: "16px",
         fontSize: 12,
         color: "var(--gray)",
         display: "flex",

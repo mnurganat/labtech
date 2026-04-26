@@ -93,7 +93,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <Breadcrumb items={[{ label: t("about.title") }]} />
 
       {/* Hero */}
-      <section style={{ background: "var(--blue)", color: "white", padding: "80px 56px 64px" }} className="px-5 md:px-14">
+      <section style={{ background: "var(--blue)", color: "white", paddingTop: "80px", paddingBottom: "64px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("about.tag")}
@@ -126,7 +126,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Mission */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="grid-2col">
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
@@ -161,7 +161,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Values */}
-      <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
             {t("about.values_title")}
@@ -181,7 +181,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Clients */}
-      <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
@@ -230,7 +230,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Certificates */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
+      <section style={{ paddingTop: "80px", paddingBottom: "80px" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
