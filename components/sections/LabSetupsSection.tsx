@@ -84,7 +84,7 @@ export default function LabSetupsSection({ locale }: { locale: string }) {
           </div>
           <h2
             style={{
-              fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+              fontFamily: "var(--font-roboto), Roboto, sans-serif",
               fontSize: "clamp(20px, 2.5vw, 28px)",
               fontWeight: 700,
               color: "var(--ink)",

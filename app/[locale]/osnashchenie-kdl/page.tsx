@@ -51,7 +51,7 @@ export default async function LabSetupsPage({
           </div>
           <h1
             style={{
-              fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+              fontFamily: "var(--font-roboto), Roboto, sans-serif",
               fontSize: "clamp(28px, 4vw, 52px)",
               fontWeight: 700,
               lineHeight: 1.15,
@@ -88,7 +88,7 @@ export default async function LabSetupsPage({
               <div key={s.label}>
                 <div
                   style={{
-                    fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+                    fontFamily: "var(--font-roboto), Roboto, sans-serif",
                     fontSize: 36,
                     fontWeight: 700,
                     color: "white",
@@ -132,7 +132,7 @@ export default async function LabSetupsPage({
               <div key={step.n} style={{ background: "white", padding: "28px 24px" }}>
                 <div
                   style={{
-                    fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+                    fontFamily: "var(--font-roboto), Roboto, sans-serif",
                     fontSize: 40,
                     fontWeight: 700,
                     color: "var(--blue)",

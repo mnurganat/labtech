@@ -53,7 +53,7 @@ export default function LeadForm({ productId, productName, onSuccess }: LeadForm
     return (
       <div style={{ textAlign: "center", padding: "32px 0" }}>
         <CheckCircle size={48} style={{ color: "var(--blue)", margin: "0 auto 16px" }} />
-        <h3 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
+        <h3 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
           {t("success_title")}
         </h3>
         <p style={{ fontSize: 14, color: "var(--gray)", lineHeight: 1.7 }}>{t("success_text")}</p>

@@ -75,7 +75,7 @@ export default function KazakhstanMap() {
           </div>
           <h2
             style={{
-              fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+              fontFamily: "var(--font-roboto), Roboto, sans-serif",
               fontSize: "clamp(28px, 4vw, 48px)",
               fontWeight: 700,
               lineHeight: 1.15,
@@ -115,7 +115,7 @@ export default function KazakhstanMap() {
             <div key={s.l}>
               <div
                 style={{
-                  fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+                  fontFamily: "var(--font-roboto), Roboto, sans-serif",
                   fontSize: 40,
                   fontWeight: 700,
                   color: "var(--blue)",
@@ -253,7 +253,7 @@ export default function KazakhstanMap() {
               >
                 <div
                   style={{
-                    fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+                    fontFamily: "var(--font-roboto), Roboto, sans-serif",
                     fontSize: 18,
                     fontWeight: 700,
                     marginBottom: 4,
@@ -314,7 +314,7 @@ export default function KazakhstanMap() {
               </div>
               <h3
                 style={{
-                  fontFamily: "var(--font-playfair, 'Playfair Display', serif)",
+                  fontFamily: "var(--font-roboto), Roboto, sans-serif",
                   fontSize: 28,
                   fontWeight: 700,
                   marginBottom: 20,
@@ -326,7 +326,7 @@ export default function KazakhstanMap() {
 
               <div style={{ display: "flex", gap: 24, marginBottom: 24 }}>
                 <div>
-                  <div style={{ fontSize: 28, fontWeight: 700, color: "var(--blue)", fontFamily: "var(--font-playfair, 'Playfair Display', serif)" }}>
+                  <div style={{ fontSize: 28, fontWeight: 700, color: "var(--blue)", fontFamily: "var(--font-roboto), Roboto, sans-serif" }}>
                     {selectedCity.deliveries}
                   </div>
                   <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 2 }}>
@@ -334,7 +334,7 @@ export default function KazakhstanMap() {
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 28, fontWeight: 700, color: "var(--blue)", fontFamily: "var(--font-playfair, 'Playfair Display', serif)" }}>
+                  <div style={{ fontSize: 28, fontWeight: 700, color: "var(--blue)", fontFamily: "var(--font-roboto), Roboto, sans-serif" }}>
                     {selectedCity.clients.length}
                   </div>
                   <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 2 }}>

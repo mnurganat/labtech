@@ -30,7 +30,7 @@ export default function FloatingContact() {
           padding: "14px 22px",
           fontSize: 13,
           fontWeight: 700,
-          fontFamily: "Manrope, sans-serif",
+          fontFamily: "Roboto, sans-serif",
           letterSpacing: "0.03em",
           boxShadow: "0 4px 24px rgba(16,117,200,0.45)",
           transition: "background 0.2s, box-shadow 0.2s",

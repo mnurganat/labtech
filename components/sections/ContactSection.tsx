@@ -17,7 +17,7 @@ export default function ContactSection({ locale }: { locale: string }) {
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("contact_section.title")}
           </div>
-          <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "white", marginBottom: 16, lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "white", marginBottom: 16, lineHeight: 1.2 }}>
             {t("contact_section.subtitle")}
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 32 }}>
@@ -44,7 +44,7 @@ export default function ContactSection({ locale }: { locale: string }) {
 
         {/* Inline form */}
         <div style={{ background: "white", padding: "40px" }}>
-          <h3 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 20, fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
+          <h3 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 20, fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
             {t("lead_form.title")}
           </h3>
           <LeadForm />

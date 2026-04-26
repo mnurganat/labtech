@@ -68,7 +68,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("news.tag")}
           </div>
-          <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1 }}>
+          <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1 }}>
             {t("news.title")}
           </h1>
         </div>
@@ -109,7 +109,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
                 </div>
               </div>
               <div>
-                <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 12, lineHeight: 1.35 }}>
+                <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 12, lineHeight: 1.35 }}>
                   {item.title}
                 </h2>
                 <p style={{ fontSize: 14, color: "var(--gray)", lineHeight: 1.75, marginBottom: 16 }}>{item.summary}</p>

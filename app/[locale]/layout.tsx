@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Playfair_Display } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -8,15 +8,10 @@ import Footer from "@/components/layout/Footer";
 import FloatingContact from "@/components/layout/FloatingContact";
 import "../globals.css";
 
-const manrope = Manrope({
+const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-playfair",
+  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -97,8 +92,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${manrope.variable} ${playfair.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "var(--font-manrope), sans-serif" }}>
+    <html lang={locale} className={roboto.variable}>
+      <body className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif" }}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">{children}</main>

@@ -70,7 +70,7 @@ export default async function HomePage({
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 20 }}>
             {t("hero.tag")}
           </div>
-          <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 24, letterSpacing: "-0.01em" }}>
+          <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 24, letterSpacing: "-0.01em" }}>
             {t("hero.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 560, marginBottom: 40 }}>
@@ -112,7 +112,7 @@ export default async function HomePage({
           <div style={{ display: "flex", gap: 48, marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.15)", flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.value}>
-                <div style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 36, fontWeight: 700, color: "white" }}>{s.value}</div>
+                <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 36, fontWeight: 700, color: "white" }}>{s.value}</div>
                 <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", fontWeight: 500, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
@@ -128,7 +128,7 @@ export default async function HomePage({
               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 10 }}>
                 {t("categories.title")}
               </div>
-              <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
+              <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
                 {t("categories.subtitle")}
               </h2>
             </div>
@@ -150,7 +150,7 @@ export default async function HomePage({
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 10 }}>
             {t("why_us.title")}
           </div>
-          <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 48 }}>
             {t("why_us.title")}
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 2 }}>
@@ -172,7 +172,7 @@ export default async function HomePage({
       {featuredProducts.length > 0 && (
         <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
           <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-            <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
+            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
               {t("product.bestseller")}
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 2 }}>

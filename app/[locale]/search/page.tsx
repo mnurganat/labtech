@@ -44,7 +44,7 @@ export default async function SearchPage({
     <>
       <Breadcrumb items={[{ label: t("search.title") }]} />
       <div style={{ maxWidth: 1400, margin: "0 auto", padding: "60px 56px" }} className="px-5 md:px-14">
-        <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
+        <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
           {t("search.title")}
         </h1>
 

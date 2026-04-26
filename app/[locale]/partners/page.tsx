@@ -65,7 +65,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("partners.tag")}
           </div>
-          <h1 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 640, marginBottom: 20, letterSpacing: "-0.01em" }}>
+          <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 640, marginBottom: 20, letterSpacing: "-0.01em" }}>
             {t("partners.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, maxWidth: 560 }}>
@@ -79,7 +79,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
               { value: "8",                    label: t("partners.stat3_label") },
             ].map((s) => (
               <div key={s.label}>
-                <div style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: 36, fontWeight: 700, color: "white" }}>{s.value}</div>
+                <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 36, fontWeight: 700, color: "white" }}>{s.value}</div>
                 <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", fontWeight: 500, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
@@ -105,7 +105,7 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
               {t("partners.cta_tag")}
             </div>
-            <h2 style={{ fontFamily: "var(--font-playfair, 'Playfair Display', serif)", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
+            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
               {t("partners.cta_title")}
             </h2>
             <p style={{ fontSize: 14, color: "var(--gray)", maxWidth: 480, lineHeight: 1.7 }}>
