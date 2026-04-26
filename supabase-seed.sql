@@ -520,7 +520,7 @@ INSERT INTO translations (entity_type,entity_id,locale,field,value) VALUES
 -- Лабораторная посуда
 ('product','prod-41','ru','name','Чашки Петри'),
 ('product','prod-41','ru','description','Лабораторные чашки Петри для культивирования микроорганизмов на плотных питательных средах. Выдерживают все химические и термические режимы стерилизации. ГОСТ 25336-82. Размеры 100×20 мм и 90×18 мм (НС и ТС варианты). Упаковка 10–36 шт.'),
-('product','prod-41','ru','manufacturer',NULL),
+('product','prod-41','ru','manufacturer','LabTechnology'),
 
 ('product','prod-42','ru','name','Микропробирки Eppendorf (Safe-Lock)'),
 ('product','prod-42','ru','description','Полипропиленовые микропробирки с откидной крышкой системы Safe-Lock. Надёжный замок исключает утечку при центрифугировании. Деления объёма и поверхность для маркировки. Объёмы 0.5 мл, 1.5 мл, 2 мл.'),
@@ -532,11 +532,11 @@ INSERT INTO translations (entity_type,entity_id,locale,field,value) VALUES
 
 ('product','prod-44','ru','name','Бумага фильтровальная лабораторная'),
 ('product','prod-44','ru','description','Лабораторная фильтровальная бумага для фильтрации жидкостей и осадков. Широкий ассортимент по размерам и плотности.'),
-('product','prod-44','ru','manufacturer',NULL),
+('product','prod-44','ru','manufacturer','LabTechnology'),
 
 ('product','prod-45','ru','name','Планшеты для определения групп крови'),
 ('product','prod-45','ru','description','Планшеты для определения групп крови в лабораторных условиях. Предназначены для работы в КДЛ.'),
-('product','prod-45','ru','manufacturer',NULL),
+('product','prod-45','ru','manufacturer','LabTechnology'),
 
 -- Небулайзеры
 ('product','prod-46','ru','name','Меш-небулайзер Yuwell M102'),

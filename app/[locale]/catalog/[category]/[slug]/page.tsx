@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { getProductBySlug, getCategoryBySlug, getProducts, getAllCategorySlugs } from "@/lib/supabase/queries";
+import CATEGORIES from "@/data/categoryTree";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ProductGallery from "@/components/catalog/ProductGallery";
 import SpecsTable from "@/components/catalog/SpecsTable";
@@ -113,7 +114,8 @@ export default async function ProductPage({
     relatedProducts = allProducts.filter((p: any) => p.slug !== slug).slice(0, 3);
   } catch {}
 
-  const mockCat = MOCK_CATEGORIES.find((c) => c.slug === category);
+  const mockCat = MOCK_CATEGORIES.find((c) => c.slug === category)
+    ?? CATEGORIES.find((c) => c.slug === category);
   const catName = categoryData?.name ?? mockCat?.name ?? category;
   const productName = product.name ?? slug;
 

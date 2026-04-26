@@ -3,6 +3,13 @@
 -- Запустить ПЕРВЫМ в: Supabase → SQL Editor
 -- ====================================================
 
+-- Сначала удаляем старые таблицы (если были с uuid — пересоздадим с text)
+drop table if exists translations cascade;
+drop table if exists leads        cascade;
+drop table if exists products     cascade;
+drop table if exists news         cascade;
+drop table if exists categories   cascade;
+
 -- Категории каталога
 create table if not exists categories (
   id          text primary key,
