@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ContactSection from "@/components/sections/ContactSection";
+import { PARTNERS } from "@/data/partners";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -18,38 +19,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `https://labtech.kz/${locale}/partners` },
   };
 }
-
-const CDN = "https://juxtxmfgdpdoewbqrhlo.supabase.co/storage/v1/object/public/partners";
-
-const PARTNERS = [
-  { name: "URIT Medical",         country: "Китай",      category: "Гематология, биохимия",              url: "https://urit.com.ru/",                       logo: `${CDN}/urit.png` },
-  { name: "HUMAN Diagnostics",    country: "Германия",   category: "Биохимические реагенты",             url: "https://www.human.de/",                      logo: "" },
-  { name: "DNA-Technology",       country: "Россия",     category: "ПЦР-оборудование",                   url: "https://dna-technology.ru/",                 logo: `${CDN}/dna-technology.png` },
-  { name: "Biobase",              country: "Китай",      category: "Боксы биологической безопасности",   url: "https://www.biobase.cc/",                    logo: `${CDN}/biobase.png` },
-  { name: "ELMI",                 country: "Латвия",     category: "Центрифуги и термостаты",            url: "https://elmi-tech.com/ru/",                  logo: `${CDN}/elmi.png` },
-  { name: "Biosan",               country: "Латвия",     category: "Лабораторное оборудование",          url: "https://biosan.lv/ru/",                      logo: `${CDN}/biosan.png` },
-  { name: "Fujirebio",            country: "Швеция",     category: "ИФА-диагностика",                    url: "https://www.fujirebio.com/",                 logo: `${CDN}/fujirebio.png` },
-  { name: "West Medica",          country: "Австрия",    category: "Микроскопы",                         url: "https://westmedica.ru/",                     logo: `${CDN}/west-medica.svg` },
-  { name: "Immunotech",           country: "Россия",     category: "Иммунологические реагенты",          url: "https://msk097.wixsite.com/immunotex",       logo: `${CDN}/immunotech.png` },
-  { name: "SteriLance",           country: "Китай",      category: "Ланцеты и расходники",               url: "",                                           logo: "" },
-  { name: "Sinocare",             country: "Китай",      category: "Диагностика диабета",                url: "https://www.sinocare.com/ru/",               logo: `${CDN}/sinocare.png` },
-  { name: "Osang Healthcare",     country: "Корея",      category: "Экспресс-тесты",                     url: "https://www.osanghc.com/",                   logo: `${CDN}/osang.svg` },
-  { name: "Zonkia",               country: "Китай",      category: "Лабораторная посуда",                url: "http://zonkia-lab.com/",                     logo: `${CDN}/zonkia.png` },
-  { name: "Biologix",             country: "Китай",      category: "Расходные материалы",                url: "https://ru.biologix-global.com/",            logo: `${CDN}/biologix.png` },
-  { name: "Viola Медтехника",     country: "Украина",    category: "Медицинское оборудование",           url: "https://viola.net.ua",                       logo: `${CDN}/viola.png` },
-  { name: "НПФ Арбис",            country: "Россия",     category: "Реагенты и красители",               url: "https://www.abrisplus.ru/",                  logo: `${CDN}/abrisplus.png` },
-  { name: "МиниМед",              country: "Россия",     category: "Небулайзеры, тонометры",             url: "https://minimed.ru/",                        logo: `${CDN}/minimed.png` },
-  { name: "Агродиагностика",      country: "Россия",     category: "Ветеринарная диагностика",           url: "https://agrodiagnostica.com/",               logo: `${CDN}/agrodiagnostika.png` },
-  { name: "HealVet",              country: "Китай",      category: "Ветеринарные анализаторы",           url: "https://www.healfo.com/",                    logo: `${CDN}/healvet.png` },
-  { name: "Seamaty",              country: "Китай",      category: "Биохимия, иммунология",              url: "https://seamaty-russia.com/",                logo: `${CDN}/seamaty.png` },
-  { name: "Dlab",                 country: "Китай",      category: "Дозирующее оборудование",            url: "https://www.dlabsci.com/",                   logo: `${CDN}/dlab.svg` },
-  { name: "Yuwell",               country: "Китай",      category: "Небулайзеры, тонометры",             url: "https://www.yuwell.com/",                    logo: `${CDN}/yuwell.png` },
-  { name: "Альфалаб",             country: "Россия",     category: "Расходные материалы",                url: "https://www.alphalabs.ru/",                  logo: "" },
-  { name: "Бирюза",               country: "Казахстан",  category: "Дезинфицирующие средства",           url: "https://biryuza-med.com/",                   logo: `${CDN}/biryuza.svg` },
-  { name: "Полимерные изделия",   country: "Россия",     category: "Расходные материалы",                url: "https://www.polimizd.ru/",                   logo: `${CDN}/polimizd.png` },
-  { name: "Сункар",               country: "Казахстан",  category: "Ветеринарные препараты",             url: "https://densaulyk.kz",                       logo: `${CDN}/sunkar_logo_color.svg` },
-  { name: "Добровет",             country: "Казахстан",  category: "Ветеринарные препараты",             url: "https://dobrovet.kz",                        logo: `${CDN}/dobrovet.png` },
-];
 
 export default async function PartnersPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
