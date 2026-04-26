@@ -4,7 +4,7 @@ import { routing } from "@/i18n/routing";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ContactSection from "@/components/sections/ContactSection";
 import CertificateGallery from "@/components/sections/CertificateGallery";
-import { PARTNERS } from "@/data/partners";
+import PartnerGrid from "@/components/sections/PartnerGrid";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -191,38 +191,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t("about.partners_title")}
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 2 }}>
-            {PARTNERS.map((p) => {
-              const card = (
-                <div style={{ background: "var(--silver)", padding: "24px", borderLeft: "3px solid var(--blue)", height: "100%", display: "flex", flexDirection: "column" }}>
-                  {p.logo ? (
-                    <div style={{ height: 52, marginBottom: 16, display: "flex", alignItems: "center", background: "white", padding: "6px 10px", maxWidth: 160 }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={p.logo} alt={p.name} style={{ maxHeight: 40, maxWidth: 140, objectFit: "contain" }} className="partner-logo" />
-                    </div>
-                  ) : (
-                    <div style={{ height: 52, marginBottom: 16, display: "flex", alignItems: "center" }}>
-                      <div style={{ width: 40, height: 40, background: "var(--blue)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ color: "white", fontWeight: 700, fontSize: 14 }}>{p.name.charAt(0)}</span>
-                      </div>
-                    </div>
-                  )}
-                  <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)", marginBottom: 6 }}>{p.name}</div>
-                  <div style={{ fontSize: 11, color: "var(--blue)", fontWeight: 600, marginBottom: 8 }}>{p.country}</div>
-                  <div style={{ fontSize: 12, color: "var(--gray)" }}>{p.category}</div>
-                </div>
-              );
-              return p.url ? (
-                <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                  style={{ textDecoration: "none", color: "inherit", display: "block" }}
-                  className="partner-card-link">
-                  {card}
-                </a>
-              ) : (
-                <div key={p.name}>{card}</div>
-              );
-            })}
-          </div>
+          <PartnerGrid />
         </div>
       </section>
 
