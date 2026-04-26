@@ -180,21 +180,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* Partners */}
-      <section style={{ padding: "80px 56px" }} className="px-5 md:px-14">
-        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-          <div style={{ marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
-              {t("about.partners_tag")}
-            </div>
-            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
-              {t("about.partners_title")}
-            </h2>
-          </div>
-          <PartnerGrid />
-        </div>
-      </section>
-
       {/* Clients */}
       <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
