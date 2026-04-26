@@ -206,44 +206,38 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t("about.clients_title")}
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 2 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 2 }}>
             {CLIENT_LOGOS.map((client, i) => {
-              const inner = (
-                <>
+              const card = (
+                <div style={{
+                  background: "white",
+                  padding: "20px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: 10,
+                  height: "100%",
+                  textDecoration: "none",
+                }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={client.src}
                     alt={client.name}
-                    style={{ maxWidth: "100%", maxHeight: 60, objectFit: "contain", filter: "grayscale(20%)", transition: "filter 0.2s" }}
+                    style={{ maxWidth: "100%", maxHeight: 52, objectFit: "contain" }}
                   />
-                </>
+                  <div style={{ fontSize: 11, color: "var(--gray)", textAlign: "center", lineHeight: 1.3 }}>
+                    {client.name}
+                  </div>
+                </div>
               );
-              const wrapperStyle: React.CSSProperties = {
-                background: "white",
-                padding: "16px 20px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                minHeight: 90,
-                textDecoration: "none",
-                transition: "box-shadow 0.2s",
-              };
               return client.url ? (
-                <a
-                  key={i}
-                  href={client.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={client.name}
-                  style={{ ...wrapperStyle, cursor: "pointer" }}
-                  className="client-logo-link"
-                >
-                  {inner}
+                <a key={i} href={client.url} target="_blank" rel="noopener noreferrer"
+                  style={{ display: "block", textDecoration: "none" }}
+                  className="client-logo-link">
+                  {card}
                 </a>
               ) : (
-                <div key={i} style={wrapperStyle} title={client.name}>
-                  {inner}
-                </div>
+                <div key={i}>{card}</div>
               );
             })}
           </div>
