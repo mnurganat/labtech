@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -8,11 +9,20 @@ import Footer from "@/components/layout/Footer";
 import FloatingContact from "@/components/layout/FloatingContact";
 import "../globals.css";
 
+// Body: Roboto (Cyrillic + Latin)
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "700", "900"],
   variable: "--font-roboto",
   display: "swap",
+});
+
+// Headings: Cactus Classical Serif
+const cactus = localFont({
+  src: "../../public/fonts/CactusClassicalSerif-Regular.woff2",
+  variable: "--font-cactus",
+  display: "swap",
+  weight: "400",
 });
 
 export function generateStaticParams() {
@@ -92,8 +102,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={roboto.variable}>
-      <body className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif" }}>
+    <html lang={locale} className={`${roboto.variable} ${cactus.variable}`}>
+      <body className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', var(--font-roboto), Roboto, sans-serif" }}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">{children}</main>

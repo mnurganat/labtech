@@ -107,7 +107,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("about.tag")}
           </div>
-          <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 20, letterSpacing: "-0.01em" }}>
+          <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 700, lineHeight: 1.1, maxWidth: 700, marginBottom: 20, letterSpacing: "-0.01em" }}>
             {t("about.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.75, maxWidth: 600 }}>
@@ -122,7 +122,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}>
             {stats.map((s) => (
               <div key={s.value} style={{ padding: "32px 24px", borderRight: "1px solid rgba(255,255,255,0.15)" }}>
-                <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 36, fontWeight: 700, color: "white", lineHeight: 1 }}>
+                <div style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 36, fontWeight: 700, color: "white", lineHeight: 1 }}>
                   {s.value}
                 </div>
                 <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginTop: 6, lineHeight: 1.4 }}>
@@ -141,7 +141,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
               {t("about.mission_tag")}
             </div>
-            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 20, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 20, lineHeight: 1.25 }}>
               {t("about.mission_title")}
             </h2>
             <p style={{ fontSize: 15, color: "var(--gray)", lineHeight: 1.85 }}>
@@ -172,13 +172,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       {/* Values */}
       <section style={{ padding: "80px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
+          <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
             {t("about.values_title")}
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }} className="grid-3col">
             {values.map((v, i) => (
               <div key={i} style={{ background: "white", padding: "40px 32px", borderTop: "3px solid var(--blue)" }}>
-                <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 48, fontWeight: 700, color: "var(--blue)", lineHeight: 1, marginBottom: 16, opacity: 0.2 }}>
+                <div style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 48, fontWeight: 700, color: "var(--blue)", lineHeight: 1, marginBottom: 16, opacity: 0.2 }}>
                   0{i + 1}
                 </div>
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--ink)", marginBottom: 12 }}>{v.title}</h3>
@@ -196,7 +196,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
               {t("about.partners_tag")}
             </div>
-            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
+            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
               {t("about.partners_title")}
             </h2>
           </div>
@@ -219,7 +219,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
               {t("about.clients_tag")}
             </div>
-            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
+            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
               {t("about.clients_title")}
             </h2>
           </div>
@@ -274,7 +274,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
               {t("about.certs_tag")}
             </div>
-            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
+            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, color: "var(--ink)" }}>
               {t("about.certs_title")}
             </h2>
           </div>

@@ -65,7 +65,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
           <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.65)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
             {t("contacts.tag")}
           </div>
-          <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1, marginBottom: 12, letterSpacing: "-0.01em" }}>
+          <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.1, marginBottom: 12, letterSpacing: "-0.01em" }}>
             {t("contacts.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", maxWidth: 500 }}>{t("contacts.subtitle")}</p>
@@ -154,7 +154,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
           <div style={{ fontSize: 11, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
             {t("contacts.departments_tag")}
           </div>
-          <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
+          <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
             {t("contacts.departments_title")}
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 2 }}>
@@ -220,7 +220,7 @@ export default async function ContactsPage({ params }: { params: Promise<{ local
       {/* Contact form */}
       <section style={{ padding: "64px 56px", background: "var(--silver)" }} className="px-5 md:px-14">
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
+          <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 700, color: "var(--ink)", marginBottom: 8 }}>
             {t("lead_form.title")}
           </h2>
           <p style={{ fontSize: 14, color: "var(--gray)", marginBottom: 32 }}>{t("lead_form.subtitle")}</p>

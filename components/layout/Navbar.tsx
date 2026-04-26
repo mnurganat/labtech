@@ -76,7 +76,7 @@ export default function Navbar() {
             <FlaskConical size={20} color="white" />
           </div>
           <div>
-            <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>
+            <div style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>
               LabTech
             </div>
             <div style={{ fontSize: 10, color: "var(--gray)", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 1 }}>

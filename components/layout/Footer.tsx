@@ -27,7 +27,7 @@ export default function Footer() {
                 <FlaskConical size={18} color="white" />
               </div>
               <div>
-                <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 14, fontWeight: 700, color: "white" }}>
+                <div style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 14, fontWeight: 700, color: "white" }}>
                   LabTech
                 </div>
                 <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>

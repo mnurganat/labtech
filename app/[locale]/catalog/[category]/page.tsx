@@ -106,7 +106,7 @@ export default async function CategoryPage({
 
           {/* Main */}
           <div>
-            <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "var(--ink)", marginBottom: 32 }}>
+            <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "var(--ink)", marginBottom: 32 }}>
               {catName}
             </h1>
             {products.length === 0 ? (

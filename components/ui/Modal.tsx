@@ -48,7 +48,7 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
       >
         {title && (
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px 28px 0" }}>
-            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 22, fontWeight: 700, color: "var(--ink)" }}>
+            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 22, fontWeight: 700, color: "var(--ink)" }}>
               {title}
             </h2>
             <button

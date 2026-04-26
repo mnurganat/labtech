@@ -160,7 +160,7 @@ export default async function ProductPage({
           <div style={{ fontSize: 10, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>
             {catName}
           </div>
-          <h1 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.15, marginBottom: 20, letterSpacing: "-0.01em" }}>
+          <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.15, marginBottom: 20, letterSpacing: "-0.01em" }}>
             {productName}
           </h1>
           {product.description && (
@@ -174,7 +174,7 @@ export default async function ProductPage({
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>
               {t("product.price_label")}
             </div>
-            <div style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 26, fontWeight: 700, color: "var(--ink)" }}>
+            <div style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 26, fontWeight: 700, color: "var(--ink)" }}>
               {product.price ?? t("product.price_default")}
             </div>
             <div style={{ fontSize: 12, color: "var(--gray)", marginTop: 4 }}>{t("product.price_note")}</div>
@@ -197,7 +197,7 @@ export default async function ProductPage({
           {/* Features */}
           {product.features?.length > 0 && (
             <div style={{ marginTop: 48, paddingTop: 48, borderTop: "1px solid var(--border)" }}>
-              <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 24 }}>
+              <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 24 }}>
                 {t("product.features_title")}
               </h2>
               {product.features.map((f: any, i: number) => (
@@ -222,7 +222,7 @@ export default async function ProductPage({
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--blue)", marginBottom: 10 }}>
               {t("product.related_title")}
             </div>
-            <h2 style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif", fontSize: 28, fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
+            <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 28, fontWeight: 700, color: "var(--ink)", marginBottom: 40 }}>
               {t("product.related_subtitle")}
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
