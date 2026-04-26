@@ -1,8 +1,49 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLocale } from "next-intl";
-import { ChevronRight } from "lucide-react";
+import {
+  ChevronRight,
+  Microscope,
+  FlaskConical,
+  Droplets,
+  PawPrint,
+  Wind,
+  GlassWater,
+  Activity,
+  Dna,
+  Droplet,
+  ShieldCheck,
+  Beaker,
+  Bug,
+  Package,
+  Cpu,
+  Sparkles,
+  Heart,
+  type LucideIcon,
+} from "lucide-react";
 import type { Category } from "@/types";
+
+const SLUG_ICONS: Record<string, LucideIcon> = {
+  "kliniko-diagnosticheskaya":  Microscope,
+  "mikroskopy":                 Microscope,
+  "obshchelaboratornoe":        FlaskConical,
+  "reagenty":                   Droplets,
+  "veterinariya":               PawPrint,
+  "chistye-pomeshcheniya":      Wind,
+  "laboratornaya-posuda":       GlassWater,
+  "nebulayizery":               Activity,
+  "pcr-diagnostika":            Dna,
+  "koagulyatsiya":              Droplet,
+  "immunologiya":               ShieldCheck,
+  "gematologiya":               Beaker,
+  "biohimiya":                  FlaskConical,
+  "mikrobiologiya":             Bug,
+  "raskhodnye-materialy":       Package,
+  "avtomatizatsiya-ptsr":       Cpu,
+  "dezinfektsiya":              Sparkles,
+  "diagnostika-diabeta":        Heart,
+  "tonometry":                  Heart,
+};
 
 interface CategoryCardProps {
   category: Category;
@@ -10,6 +51,7 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ category }: CategoryCardProps) {
   const locale = useLocale();
+  const Icon = SLUG_ICONS[category.slug] ?? FlaskConical;
 
   return (
     <Link
@@ -32,9 +74,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         </div>
       ) : (
         <div style={{ width: 48, height: 48, background: "var(--blue-lt)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--blue)">
-            <path d="M7 18H5V6h2v12zm4-2H9V8h2v8zm4 4h-2V4h2v16zm4-6h-2v-4h2v4z" />
-          </svg>
+          <Icon size={24} color="var(--blue)" strokeWidth={1.5} />
         </div>
       )}
       <div style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", lineHeight: 1.35, marginBottom: 8 }}>
