@@ -47,7 +47,7 @@ const PARTNERS = [
   { name: "Альфалаб",             country: "Россия",     category: "Расходные материалы",                url: "https://www.alphalabs.ru/",                  logo: "" },
   { name: "Бирюза",               country: "Казахстан",  category: "Дезинфицирующие средства",           url: "https://biryuza-med.com/",                   logo: `${CDN}/biryuza.svg` },
   { name: "Полимерные изделия",   country: "Россия",     category: "Расходные материалы",                url: "https://www.polimizd.ru/",                   logo: `${CDN}/polimizd.png` },
-  { name: "Сункар",               country: "Казахстан",  category: "Ветеринарные препараты",             url: "https://densaulyk.kz",                       logo: `${CDN}/sunkar.svg` },
+  { name: "Сункар",               country: "Казахстан",  category: "Ветеринарные препараты",             url: "https://densaulyk.kz",                       logo: `${CDN}/sunkar_logo_color.svg` },
   { name: "Добровет",             country: "Казахстан",  category: "Ветеринарные препараты",             url: "https://dobrovet.kz",                        logo: `${CDN}/dobrovet.png` },
 ];
 
@@ -102,9 +102,9 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
               const card = (
                 <div style={{ background: "var(--silver)", padding: "24px", borderLeft: "3px solid var(--blue)", height: "100%", display: "flex", flexDirection: "column" }}>
                   {p.logo ? (
-                    <div style={{ height: 52, marginBottom: 16, display: "flex", alignItems: "center" }}>
+                    <div style={{ height: 52, marginBottom: 16, display: "flex", alignItems: "center", background: "white", padding: "6px 10px", maxWidth: 160 }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={p.logo} alt={p.name} style={{ maxHeight: 48, maxWidth: 140, objectFit: "contain", filter: "grayscale(100%)", opacity: 0.75, transition: "filter 0.2s, opacity 0.2s" }} className="partner-logo" />
+                      <img src={p.logo} alt={p.name} style={{ maxHeight: 40, maxWidth: 140, objectFit: "contain" }} className="partner-logo" />
                     </div>
                   ) : (
                     <div style={{ height: 52, marginBottom: 16, display: "flex", alignItems: "center" }}>
