@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { getCategoryBySlug, getProducts, getAllCategorySlugs } from "@/lib/supabase/queries";
+import { getCategoryBySlug, getProducts, getProductsPage, getAllCategorySlugs, PAGE_SIZE } from "@/lib/supabase/queries";
 import { SITE_URL } from "@/lib/siteUrl";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ProductCard from "@/components/catalog/ProductCard";
 import CategoryCard from "@/components/catalog/CategoryCard";
 import CategoryTree from "@/components/catalog/CategoryTree";
+import PaginationBar from "@/components/catalog/PaginationBar";
 import CATEGORIES from "@/data/categoryTree";
 
 // Re-fetch from Supabase on every request so product/category changes are instant
@@ -49,12 +50,18 @@ export async function generateMetadata({
 
 export default async function CategoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; category: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { locale, category } = await params;
+  const { page: pageParam } = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
+
+  // Parse page number (1-indexed in URL, 0-indexed internally)
+  const currentPage = Math.max(0, parseInt(pageParam ?? "1", 10) - 1);
 
   // Find subcategories from local tree (fast, no DB call)
   const localCat = CATEGORIES.find((c) => c.slug === category);
@@ -64,16 +71,28 @@ export default async function CategoryPage({
 
   let categoryData: any = null;
   let products: any[] = [];
+  let totalProducts = 0;
 
   try {
     categoryData = await getCategoryBySlug(category, locale);
     if (categoryData) {
-      const fetched = await getProducts(categoryData.id, locale);
-      products = fetched; // keep empty array if no direct products
+      // Parent categories with subcategories: no products, show tiles
+      if (localSubcats.length > 0) {
+        const fetched = await getProducts(categoryData.id, locale);
+        products = fetched;
+        totalProducts = fetched.length;
+      } else {
+        // Leaf category: use paginated query
+        const result = await getProductsPage(categoryData.id, locale, currentPage);
+        products = result.products;
+        totalProducts = result.total;
+      }
     }
   } catch {}
 
   const catName = categoryData?.name ?? localCat?.name ?? category;
+  const totalPages = Math.ceil(totalProducts / PAGE_SIZE);
+  const basePath = `/${locale}/catalog/${category}`;
 
   return (
     <>
@@ -95,9 +114,16 @@ export default async function CategoryPage({
 
           {/* Main */}
           <div>
-            <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "var(--ink)", marginBottom: 32 }}>
-              {catName}
-            </h1>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32, flexWrap: "wrap", gap: 8 }}>
+              <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "var(--ink)" }}>
+                {catName}
+              </h1>
+              {totalProducts > 0 && (
+                <span style={{ fontSize: 13, color: "var(--gray)", whiteSpace: "nowrap" }}>
+                  {totalProducts} {t("categories.products_count")}
+                </span>
+              )}
+            </div>
 
             {/* If parent category with subcategories and no direct products → show subcategory tiles */}
             {localSubcats.length > 0 && products.length === 0 ? (
@@ -107,11 +133,18 @@ export default async function CategoryPage({
                 ))}
               </div>
             ) : products.length > 0 ? (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 2 }}>
-                {products.map((product: any) => (
-                  <ProductCard key={product.id} product={product} categorySlug={category} />
-                ))}
-              </div>
+              <>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 2 }}>
+                  {products.map((product: any) => (
+                    <ProductCard key={product.id} product={product} categorySlug={category} />
+                  ))}
+                </div>
+                <PaginationBar
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  basePath={basePath}
+                />
+              </>
             ) : (
               <div style={{ padding: "60px 0", textAlign: "center", color: "var(--gray)" }}>
                 <p style={{ fontSize: 16 }}>{t("catalog.no_products")}</p>

@@ -87,6 +87,37 @@ export const getCategoryBySlug = unstable_cache(
   { revalidate: TTL, tags: ["categories"] }
 );
 
+// ── Category by ID ─────────────────────────────────────────────────────────
+async function _getCategoryById(id: string, locale: string): Promise<Category | null> {
+  const supabase = getClient();
+  const { data: category } = await supabase
+    .from("categories")
+    .select("*")
+    .eq("id", id)
+    .eq("is_active", true)
+    .single();
+
+  if (!category) return null;
+
+  const { data: translations } = await supabase
+    .from("translations")
+    .select("field, value")
+    .eq("entity_type", "category")
+    .eq("entity_id", (category as any).id)
+    .eq("locale", locale);
+
+  const trans: Record<string, string> = {};
+  (translations as any[] ?? []).forEach(({ field, value }: any) => { trans[field] = value; });
+
+  return { ...(category as any), name: trans.name ?? (category as any).slug, description: trans.description ?? "" };
+}
+
+export const getCategoryById = unstable_cache(
+  _getCategoryById,
+  ["category-by-id"],
+  { revalidate: TTL, tags: ["categories"] }
+);
+
 // ── Products ────────────────────────────────────────────────────────────────
 async function _getProducts(categoryId: string | undefined, locale: string): Promise<Product[]> {
   const supabase = getClient();
@@ -150,12 +181,60 @@ export const getProductBySlug = unstable_cache(
   { revalidate: TTL, tags: ["products"] }
 );
 
+// ── Products paginated ──────────────────────────────────────────────────────
+export const PAGE_SIZE = 24;
+
+async function _getProductsPage(
+  categoryId: string,
+  locale: string,
+  page: number
+): Promise<{ products: Product[]; total: number }> {
+  const supabase = getClient();
+  const from = page * PAGE_SIZE;
+  const to = from + PAGE_SIZE - 1;
+
+  const { data: products, count } = await supabase
+    .from("products")
+    .select("*", { count: "exact" })
+    .eq("is_active", true)
+    .eq("category_id", categoryId)
+    .order("created_at", { ascending: false })
+    .range(from, to);
+
+  if (!products?.length) return { products: [], total: count ?? 0 };
+
+  const ids = (products as any[]).map((p: any) => p.id);
+  const { data: translations } = await supabase
+    .from("translations")
+    .select("entity_id, field, value")
+    .eq("entity_type", "product")
+    .eq("locale", locale)
+    .in("entity_id", ids);
+
+  const transMap = buildTransMap((translations ?? []) as TransRow[]);
+
+  return {
+    products: (products as any[]).map((p: any) => ({
+      ...p,
+      name: transMap[p.id]?.name ?? p.slug,
+      description: transMap[p.id]?.description ?? "",
+    })),
+    total: count ?? 0,
+  };
+}
+
+export const getProductsPage = unstable_cache(
+  _getProductsPage,
+  ["products-page"],
+  { revalidate: TTL, tags: ["products"] }
+);
+
 // ── Featured products ───────────────────────────────────────────────────────
 async function _getFeaturedProducts(locale: string, limit: number): Promise<Product[]> {
   const supabase = getClient();
   const { data: products } = await supabase
     .from("products")
-    .select("*")
+    .select("*, category:categories(id, slug)")
     .eq("is_featured", true)
     .eq("is_active", true)
     .limit(limit);

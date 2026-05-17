@@ -11,7 +11,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, categorySlug }: ProductCardProps) {
   const locale = useLocale();
   const t = useTranslations("product");
-  const href = `/${locale}/catalog/${categorySlug ?? "all"}/${product.slug}`;
+  const href = `/${locale}/catalog/${categorySlug ?? (product.category as any)?.slug ?? "all"}/${product.slug}`;
 
   return (
     <Link

@@ -68,7 +68,12 @@
     "related_title": "Related Products",
     "related_subtitle": "Other products from catalog",
     "more": "Learn more →",
-    "bestseller": "Bestseller"
+    "bestseller": "Bestseller",
+    "docs_title": "Documentation",
+    "doc_brief": "Brief Instructions",
+    "doc_full": "Full Instructions",
+    "doc_brochure": "Brochure",
+    "doc_download": "Download PDF"
   },
   "lead_form": {
     "title": "Request Commercial Proposal",

@@ -17,8 +17,8 @@ export interface Product {
   slug: string;
   price: string;
   images: string[];
-  specs: Spec[];
-  features: Feature[];
+  specs: Spec[] | Record<string, string> | null;
+  features: Feature[] | ProductFeatures | null;
   is_featured: boolean;
   is_active: boolean;
   hits: number;
@@ -36,6 +36,17 @@ export interface Spec {
 export interface Feature {
   title: string;
   text: string;
+}
+
+export interface ProductDocuments {
+  brief?: string | null;
+  full?: string | null;
+  brochure?: string | null;
+}
+
+export interface ProductFeatures {
+  documents?: ProductDocuments;
+  [key: string]: unknown;
 }
 
 export interface Lead {

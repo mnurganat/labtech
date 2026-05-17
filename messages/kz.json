@@ -68,7 +68,12 @@
     "related_title": "Ұқсас тауарлар",
     "related_subtitle": "Каталогтан басқа тауарлар",
     "more": "Толығырақ →",
-    "bestseller": "Хит сатылымдар"
+    "bestseller": "Хит сатылымдар",
+    "docs_title": "Құжаттама",
+    "doc_brief": "Қысқаша нұсқаулық",
+    "doc_full": "Толық нұсқаулық",
+    "doc_brochure": "Брошюра",
+    "doc_download": "PDF жүктеу"
   },
   "lead_form": {
     "title": "Коммерциялық ұсыныс сұрату",

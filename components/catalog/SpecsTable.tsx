@@ -17,7 +17,7 @@ export default function SpecsTable({ specs }: SpecsTableProps) {
       </div>
       {specs.map((spec, i) => (
         <div key={i} className="spec-row">
-          <span className="spec-key">{spec.key}</span>
+          <span className="spec-key">{spec.key ?? (spec as any).name}</span>
           <span className="spec-val">{spec.value}</span>
         </div>
       ))}

@@ -3,7 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/siteUrl";
-import { getProductBySlug, getCategoryBySlug, getProducts, getAllCategorySlugs } from "@/lib/supabase/queries";
+import { getProductBySlug, getCategoryBySlug, getCategoryById, getProducts, getAllCategorySlugs } from "@/lib/supabase/queries";
 import CATEGORIES from "@/data/categoryTree";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ProductGallery from "@/components/catalog/ProductGallery";
@@ -84,8 +84,18 @@ export default async function ProductPage({
     relatedProducts = allProducts.filter((p: any) => p.slug !== slug).slice(0, 3);
   } catch {}
 
+  // Fallback: if URL category param doesn't match a real category (e.g. "all"),
+  // look up the real category from the product's category_id
+  if (!categoryData) {
+    try {
+      categoryData = await getCategoryById(product.category_id, locale);
+    } catch {}
+  }
+
   const localCat = CATEGORIES.find((c) => c.slug === category);
   const catName = categoryData?.name ?? localCat?.name ?? category;
+  // Use real category slug for breadcrumb href (not the URL param which may be "all")
+  const catSlug = categoryData?.slug ?? localCat?.slug ?? category;
   const productName = product.name ?? slug;
 
   const productSchema = {
@@ -113,7 +123,7 @@ export default async function ProductPage({
       <Breadcrumb
         items={[
           { label: t("breadcrumb.catalog"), href: `/${locale}/catalog` },
-          { label: catName, href: `/${locale}/catalog/${category}` },
+          { label: catName, href: `/${locale}/catalog/${catSlug}` },
           { label: productName },
         ]}
       />
@@ -125,7 +135,7 @@ export default async function ProductPage({
         </div>
 
         {/* Info — scrollable right column */}
-        <div style={{ padding: "56px", overflowY: "auto" }} className="px-5 md:px-14">
+        <div style={{ padding: "56px", overflowY: "auto" }} className="product-info">
           <div style={{ fontSize: 10, fontWeight: 700, color: "var(--blue)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>
             {catName}
           </div>
@@ -156,20 +166,88 @@ export default async function ProductPage({
             locale={locale}
           />
 
+          {/* Documents */}
+          {(product.features as any)?.documents && Object.values((product.features as any).documents).some(Boolean) && (
+            <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: "1px solid var(--border)" }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "var(--gray)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+                {t("product.docs_title")}
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                {(product.features as any).documents.brief && (
+                  <a
+                    href={(product.features as any).documents.brief}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex", alignItems: "center", gap: 8,
+                      padding: "10px 16px", border: "1.5px solid var(--border)",
+                      fontSize: 13, fontWeight: 600, color: "var(--ink)",
+                      textDecoration: "none", transition: "border-color 0.2s, color 0.2s",
+                    }}
+                    className="doc-link"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--blue)", flexShrink: 0 }}>
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                    {t("product.doc_brief")}
+                  </a>
+                )}
+                {(product.features as any).documents.full && (
+                  <a
+                    href={(product.features as any).documents.full}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex", alignItems: "center", gap: 8,
+                      padding: "10px 16px", border: "1.5px solid var(--border)",
+                      fontSize: 13, fontWeight: 600, color: "var(--ink)",
+                      textDecoration: "none", transition: "border-color 0.2s, color 0.2s",
+                    }}
+                    className="doc-link"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--blue)", flexShrink: 0 }}>
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                    {t("product.doc_full")}
+                  </a>
+                )}
+                {(product.features as any).documents.brochure && (
+                  <a
+                    href={(product.features as any).documents.brochure}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex", alignItems: "center", gap: 8,
+                      padding: "10px 16px", border: "1.5px solid var(--border)",
+                      fontSize: 13, fontWeight: 600, color: "var(--ink)",
+                      textDecoration: "none", transition: "border-color 0.2s, color 0.2s",
+                    }}
+                    className="doc-link"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--blue)", flexShrink: 0 }}>
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    {t("product.doc_brochure")}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Specs */}
-          {product.specs?.length > 0 && (
+          {(product.specs as any)?.length > 0 && (
             <div style={{ marginBottom: 48 }}>
-              <SpecsTable specs={product.specs} />
+              <SpecsTable specs={product.specs as any} />
             </div>
           )}
 
           {/* Features */}
-          {product.features?.length > 0 && (
+          {(product.features as any)?.length > 0 && (
             <div style={{ marginTop: 48, paddingTop: 48, borderTop: "1px solid var(--border)" }}>
               <h2 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 24 }}>
                 {t("product.features_title")}
               </h2>
-              {product.features.map((f: any, i: number) => (
+              {(product.features as any[]).map((f: any, i: number) => (
                 <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start", padding: "16px 0", borderBottom: "1px solid var(--border)" }}>
                   <div style={{ width: 28, height: 28, background: "var(--blue)", color: "white", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     {i + 1}

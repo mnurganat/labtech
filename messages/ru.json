@@ -68,7 +68,12 @@
     "related_title": "Похожие товары",
     "related_subtitle": "Другие товары из каталога",
     "more": "Подробнее →",
-    "bestseller": "Хит продаж"
+    "bestseller": "Хит продаж",
+    "docs_title": "Документация",
+    "doc_brief": "Краткая инструкция",
+    "doc_full": "Полная инструкция",
+    "doc_brochure": "Брошюра",
+    "doc_download": "Скачать PDF"
   },
   "lead_form": {
     "title": "Запросить коммерческое предложение",
