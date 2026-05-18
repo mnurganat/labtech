@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { getCategoryBySlug, getProducts, getProductsPage, getAllCategorySlugs, PAGE_SIZE } from "@/lib/supabase/queries";
+import { getCategoryBySlug, getProducts, getProductsPage, searchProductsInCategory, getAllCategorySlugs, PAGE_SIZE } from "@/lib/supabase/queries";
 import { SITE_URL } from "@/lib/siteUrl";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ProductCard from "@/components/catalog/ProductCard";
 import CategoryCard from "@/components/catalog/CategoryCard";
 import CategoryTree from "@/components/catalog/CategoryTree";
 import PaginationBar from "@/components/catalog/PaginationBar";
+import CategorySearch from "@/components/catalog/CategorySearch";
 import CATEGORIES from "@/data/categoryTree";
 
 // Re-fetch from Supabase on every request so product/category changes are instant
@@ -53,13 +54,14 @@ export default async function CategoryPage({
   searchParams,
 }: {
   params: Promise<{ locale: string; category: string }>;
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string; q?: string }>;
 }) {
   const { locale, category } = await params;
-  const { page: pageParam } = await searchParams;
+  const { page: pageParam, q: searchQuery } = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
+  const searchTerm = searchQuery?.trim() ?? "";
   // Parse page number (1-indexed in URL, 0-indexed internally)
   const currentPage = Math.max(0, parseInt(pageParam ?? "1", 10) - 1);
 
@@ -76,8 +78,12 @@ export default async function CategoryPage({
   try {
     categoryData = await getCategoryBySlug(category, locale);
     if (categoryData) {
-      // Parent categories with subcategories: no products, show tiles
-      if (localSubcats.length > 0) {
+      if (searchTerm) {
+        // Search mode: filter by name within this category (no pagination)
+        products = await searchProductsInCategory(categoryData.id, searchTerm, locale);
+        totalProducts = products.length;
+      } else if (localSubcats.length > 0) {
+        // Parent categories with subcategories: no products, show tiles
         const fetched = await getProducts(categoryData.id, locale);
         products = fetched;
         totalProducts = fetched.length;
@@ -114,7 +120,7 @@ export default async function CategoryPage({
 
           {/* Main */}
           <div>
-            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32, flexWrap: "wrap", gap: 8 }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
               <h1 style={{ fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, color: "var(--ink)" }}>
                 {catName}
               </h1>
@@ -124,6 +130,16 @@ export default async function CategoryPage({
                 </span>
               )}
             </div>
+
+            {/* Search — only on leaf categories with products */}
+            {localSubcats.length === 0 && (
+              <div style={{ marginBottom: 24 }}>
+                <CategorySearch
+                  placeholder={t("catalog.search_placeholder")}
+                  defaultValue={searchTerm}
+                />
+              </div>
+            )}
 
             {/* If parent category with subcategories and no direct products → show subcategory tiles */}
             {localSubcats.length > 0 && products.length === 0 ? (
@@ -139,15 +155,25 @@ export default async function CategoryPage({
                     <ProductCard key={product.id} product={product} categorySlug={category} />
                   ))}
                 </div>
-                <PaginationBar
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  basePath={basePath}
-                />
+                {/* Hide pagination during search */}
+                {!searchTerm && (
+                  <PaginationBar
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    basePath={basePath}
+                  />
+                )}
               </>
             ) : (
               <div style={{ padding: "60px 0", textAlign: "center", color: "var(--gray)" }}>
-                <p style={{ fontSize: 16 }}>{t("catalog.no_products")}</p>
+                {searchTerm ? (
+                  <>
+                    <p style={{ fontSize: 16 }}>{t("catalog.no_results_query")} «{searchTerm}»</p>
+                    <p style={{ fontSize: 13, color: "var(--gray)", marginTop: 8 }}>{t("catalog.no_products")}</p>
+                  </>
+                ) : (
+                  <p style={{ fontSize: 16 }}>{t("catalog.no_products")}</p>
+                )}
               </div>
             )}
           </div>

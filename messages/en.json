@@ -55,7 +55,9 @@
     "no_products": "No products found",
     "load_more": "Load more",
     "pagination_prev": "Back",
-    "pagination_next": "Next"
+    "pagination_next": "Next",
+    "search_placeholder": "Search by name...",
+    "no_results_query": "No results found for"
   },
   "product": {
     "price_label": "Price",

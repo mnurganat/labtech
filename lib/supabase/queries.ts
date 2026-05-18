@@ -309,6 +309,51 @@ export async function searchProducts(query: string, locale = "ru"): Promise<Prod
   return (products as any[]).map((p: any) => ({ ...p, name: transMap[p.id] ?? p.slug }));
 }
 
+// ── Search within category ──────────────────────────────────────────────────
+export async function searchProductsInCategory(
+  categoryId: string,
+  query: string,
+  locale: string
+): Promise<Product[]> {
+  if (!query.trim()) return [];
+  const supabase = getClient();
+
+  // 1. Find product IDs matching the query in translations
+  const { data: translations } = await supabase
+    .from("translations")
+    .select("entity_id, value")
+    .eq("entity_type", "product")
+    .eq("locale", locale)
+    .eq("field", "name")
+    .ilike("value", `%${query.trim()}%`);
+
+  if (!(translations as any[])?.length) return [];
+
+  const ids = (translations as any[]).map((t: any) => t.entity_id);
+
+  // 2. Filter those IDs by category
+  const { data: products } = await supabase
+    .from("products")
+    .select("*")
+    .eq("is_active", true)
+    .eq("category_id", categoryId)
+    .in("id", ids)
+    .order("created_at", { ascending: false });
+
+  if (!products?.length) return [];
+
+  const transMap: Record<string, string> = {};
+  (translations as any[]).forEach(({ entity_id, value }: any) => {
+    transMap[entity_id] = value;
+  });
+
+  return (products as any[]).map((p: any) => ({
+    ...p,
+    name: transMap[p.id] ?? p.slug,
+    description: "",
+  }));
+}
+
 // ── Slug helpers ────────────────────────────────────────────────────────────
 export async function getAllProductSlugs(): Promise<string[]> {
   const supabase = getClient();

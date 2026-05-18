@@ -55,7 +55,9 @@
     "no_products": "Товары не найдены",
     "load_more": "Загрузить ещё",
     "pagination_prev": "Назад",
-    "pagination_next": "Далее"
+    "pagination_next": "Далее",
+    "search_placeholder": "Поиск по названию...",
+    "no_results_query": "Ничего не найдено по запросу"
   },
   "product": {
     "price_label": "Стоимость",

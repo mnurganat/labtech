@@ -55,7 +55,9 @@
     "no_products": "Тауарлар табылмады",
     "load_more": "Тағы жүктеу",
     "pagination_prev": "Артқа",
-    "pagination_next": "Алға"
+    "pagination_next": "Алға",
+    "search_placeholder": "Атауы бойынша іздеу...",
+    "no_results_query": "Сұраныс бойынша ештеңе табылмады"
   },
   "product": {
     "price_label": "Құны",
