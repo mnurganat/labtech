@@ -41,7 +41,8 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
             {t("partners.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, maxWidth: 560 }}>
-            {t("partners.subtitle")}
+            {t("partners.subtitle")}<br />
+            {t("partners.subtitle2")}
           </p>
 
           <div style={{ display: "flex", gap: 48, marginTop: 48, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.12)", flexWrap: "wrap" }}>

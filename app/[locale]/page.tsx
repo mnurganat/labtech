@@ -79,7 +79,8 @@ export default async function HomePage({
             {t("hero.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 560, marginBottom: 32 }}>
-            {t("hero.subtitle")}
+            {t("hero.subtitle")}<br />
+            {t("hero.subtitle2")}
           </p>
 
           {/* Search */}

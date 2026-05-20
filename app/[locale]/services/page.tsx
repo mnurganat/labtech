@@ -57,7 +57,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             {t("services.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.75, maxWidth: 580 }}>
-            {t("services.subtitle")}
+            {t("services.subtitle")}<br />
+            {t("services.subtitle2")}
           </p>
 
           <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>

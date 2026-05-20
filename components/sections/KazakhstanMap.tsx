@@ -343,27 +343,6 @@ export default function KazakhstanMap() {
                 </div>
               </div>
 
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
-                  {t("clients_label")}
-                </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {selectedCity.clients.map((c) => (
-                    <li
-                      key={c}
-                      style={{
-                        fontSize: 13,
-                        color: "rgba(255,255,255,0.85)",
-                        padding: "8px 0",
-                        borderBottom: "1px solid rgba(255,255,255,0.06)",
-                      }}
-                    >
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
                   {t("equipment_label")}

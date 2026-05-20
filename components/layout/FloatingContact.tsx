@@ -11,7 +11,48 @@ export default function FloatingContact() {
 
   return (
     <>
-      {/* Floating button */}
+      {/* Instagram floating button */}
+      <a
+        href="https://www.instagram.com/labtechnology/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        style={{
+          position: "fixed",
+          bottom: 96,
+          right: 28,
+          zIndex: 200,
+          width: 44,
+          height: 44,
+          background: "linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 4px 16px rgba(188,24,136,0.4)",
+          transition: "transform 0.2s, box-shadow 0.2s",
+          textDecoration: "none",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.transform = "scale(1.1)";
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 24px rgba(188,24,136,0.55)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.transform = "scale(1)";
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(188,24,136,0.4)";
+        }}
+      >
+        {/* Instagram SVG icon */}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+        </svg>
+      </a>
+
+      {/* Floating CTA button */}
       <button
         onClick={() => setOpen(true)}
         aria-label={t("contact_section.title")}

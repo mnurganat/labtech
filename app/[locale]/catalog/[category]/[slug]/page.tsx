@@ -235,11 +235,20 @@ export default async function ProductPage({
           )}
 
           {/* Specs */}
-          {(product.specs as any)?.length > 0 && (
-            <div style={{ marginBottom: 48 }}>
+          <div style={{ marginBottom: 48 }}>
+            {(product.specs as any)?.length > 0 ? (
               <SpecsTable specs={product.specs as any} />
-            </div>
-          )}
+            ) : (
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20, paddingBottom: 14, borderBottom: "2px solid var(--ink)" }}>
+                  {t("product.specs_title")}
+                </div>
+                <div style={{ padding: "20px 0", color: "var(--gray)", fontSize: 13 }}>
+                  {t("product.specs_contact")}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Features */}
           {(product.features as any)?.length > 0 && (

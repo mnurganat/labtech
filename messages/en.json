@@ -17,7 +17,7 @@
   "hero": {
     "tag": "Official Laboratory Equipment Distributor",
     "title": "Laboratory Equipment for Kazakhstan Healthcare",
-    "subtitle": "Supply, installation and service of professional laboratory equipment. Official representative of URIT, HUMAN, Biobase, DNA-Technology and 15+ manufacturers.",
+    "subtitle": "Supply, installation and service of professional laboratory equipment.",
     "cta_primary": "View Catalog",
     "cta_secondary": "Contact Us",
     "stat1_value": "500+",
@@ -26,7 +26,8 @@
     "stat2_label": "years on market",
     "stat3_value": "300+",
     "stat3_label": "clients in Kazakhstan",
-    "cta_kaspi": "We on Kaspi"
+    "cta_kaspi": "We on Kaspi",
+    "subtitle2": "Official representative of URIT, HUMAN, Biobase, DNA-Technology and 15+ manufacturers."
   },
   "categories": {
     "title": "Equipment Categories",
@@ -75,7 +76,8 @@
     "doc_brief": "Brief Instructions",
     "doc_full": "Full Instructions",
     "doc_brochure": "Brochure",
-    "doc_download": "Download PDF"
+    "doc_download": "Download PDF",
+    "specs_contact": "Please contact our manager for technical specifications"
   },
   "lead_form": {
     "title": "Request Commercial Proposal",
@@ -118,9 +120,9 @@
   "about": {
     "title": "About Us",
     "tag": "LabTech LLP — Official Distributor",
-    "subtitle": "Supplier of laboratory and medical equipment in Kazakhstan. Working with public and private medical institutions since 2008.",
+    "subtitle": "Supplier of laboratory and medical equipment in Kazakhstan.",
     "mission_title": "Our Mission",
-    "mission_text": "To provide Kazakhstan's laboratories with reliable, certified equipment from the world's leading manufacturers. We deliver not just equipment — we provide the full cycle: from selection and supply to installation, staff training and service.",
+    "mission_text": "Providing Kazakhstan's laboratories with reliable, certified equipment from leading global manufacturers.",
     "mission_tag": "Our Mission",
     "mission_intro": "LabTech LLP is the official representative of leading global laboratory equipment manufacturers in Kazakhstan. We work with clinical, biochemical, PCR and ELISA laboratories, as well as veterinary services.",
     "mission_client1": "Public and private medical institutions",
@@ -171,12 +173,14 @@
     "clients_tag": "Our Clients",
     "clients_title": "Trusted by Leading Organizations in Kazakhstan",
     "certs_tag": "Documents",
-    "certs_title": "Awards & Certificates"
+    "certs_title": "Awards & Certificates",
+    "subtitle2": "Working with state and private medical institutions since 2008.",
+    "mission_text2": "We don't just supply equipment — we provide a full cycle: from selection and delivery to installation, staff training, and service."
   },
   "services": {
     "title": "Our Services",
     "tag": "Full Support Cycle",
-    "subtitle": "From equipment selection to service maintenance — we support clients at every stage",
+    "subtitle": "From equipment selection to service maintenance —",
     "cta_primary": "Get Consultation",
     "cta_secondary": "Lab Setup",
     "item1_title": "Equipment Supply",
@@ -222,7 +226,8 @@
     "guarantee3_label": "Full Warranty",
     "guarantee3_sub": "Official manufacturer warranty",
     "guarantee4_label": "Certified Engineers",
-    "guarantee4_sub": "Trained by manufacturers"
+    "guarantee4_sub": "Trained by manufacturers",
+    "subtitle2": "we support our clients at every stage"
   },
   "contacts": {
     "title": "Contacts",
@@ -300,7 +305,7 @@
   "partners": {
     "title": "Partners",
     "tag": "Official Manufacturers",
-    "subtitle": "We work directly with 19+ world-leading laboratory equipment manufacturers. Direct contracts guarantee authenticity and service support.",
+    "subtitle": "We work directly with 19+ leading global laboratory equipment manufacturers.",
     "stat1_label": "official manufacturers",
     "stat2_label": "years of partnership",
     "stat3_label": "countries of origin",
@@ -310,7 +315,8 @@
     "cta_tag": "Partnership",
     "cta_title": "Become a LabTech Partner",
     "cta_text": "If you are a laboratory equipment manufacturer or distributor, contact us to discuss partnership terms.",
-    "cta_btn": "Write to Us"
+    "cta_btn": "Write to Us",
+    "subtitle2": "Direct contracts — a guarantee of authenticity and service support."
   },
   "lab_setups": {
     "tag": "Services",

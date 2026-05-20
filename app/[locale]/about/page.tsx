@@ -103,7 +103,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             {t("about.title")}
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.75, maxWidth: 600 }}>
-            {t("about.subtitle")}
+            {t("about.subtitle")}<br />
+            {t("about.subtitle2")}
           </p>
         </div>
       </section>
@@ -138,6 +139,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </h2>
             <p style={{ fontSize: 15, color: "var(--gray)", lineHeight: 1.85 }}>
               {t("about.mission_text")}
+            </p>
+            <p style={{ fontSize: 15, color: "var(--gray)", lineHeight: 1.85, marginTop: 16 }}>
+              {t("about.mission_text2")}
             </p>
           </div>
           <div style={{ background: "var(--silver)", padding: "40px 36px" }}>
