@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { CITIES, STATS, type CityDelivery } from "@/data/deliveries";
+import { CITIES, STATS } from "@/data/deliveries";
 import kazakhstanGeo from "@/data/kazakhstan.json";
 
 const W = 1000;
@@ -30,7 +30,6 @@ function ringToPath(ring: number[][]): string {
 export default function KazakhstanMap() {
   const t = useTranslations("map");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const countryPath = useMemo(() => {
     const feature = (kazakhstanGeo as any).features[0];
@@ -44,7 +43,6 @@ export default function KazakhstanMap() {
       .join(" ");
   }, []);
 
-  const selectedCity = selectedId ? CITIES.find((c) => c.id === selectedId) : null;
   const hoveredCity = hoveredId ? CITIES.find((c) => c.id === hoveredId) : null;
 
   return (
@@ -138,18 +136,8 @@ export default function KazakhstanMap() {
           ))}
         </div>
 
-        {/* Map + Panel */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: selectedCity ? "1fr 340px" : "1fr",
-            gap: 32,
-            alignItems: "start",
-            transition: "grid-template-columns 0.3s",
-          }}
-        >
-          {/* Map */}
-          <div style={{ position: "relative" }}>
+        {/* Map */}
+        <div style={{ position: "relative" }}>
             <svg
               viewBox={`0 0 ${W} ${H}`}
               style={{ width: "100%", height: "auto", display: "block" }}
@@ -173,18 +161,14 @@ export default function KazakhstanMap() {
               {/* Cities */}
               {CITIES.map((city) => {
                 const [x, y] = project(city.lng, city.lat);
-                const isHovered = hoveredId === city.id;
-                const isSelected = selectedId === city.id;
-                const active = isHovered || isSelected;
+                const active = hoveredId === city.id;
                 const radius = Math.max(4, Math.min(10, 3 + city.deliveries / 6));
 
                 return (
                   <g
                     key={city.id}
-                    style={{ cursor: "pointer" }}
                     onMouseEnter={() => setHoveredId(city.id)}
                     onMouseLeave={() => setHoveredId(null)}
-                    onClick={() => setSelectedId(city.id === selectedId ? null : city.id)}
                   >
                     {/* Pulsing ring */}
                     <circle
@@ -236,7 +220,7 @@ export default function KazakhstanMap() {
             </svg>
 
             {/* Tooltip */}
-            {hoveredCity && !selectedCity && (
+            {hoveredCity && (
               <div
                 style={{
                   position: "absolute",
@@ -262,108 +246,10 @@ export default function KazakhstanMap() {
                   {hoveredCity.name}
                 </div>
                 <div style={{ fontSize: 13, color: "var(--blue)", fontWeight: 600 }}>
-                  {hoveredCity.deliveries} {t("deliveries_label")} · {hoveredCity.clients.length} {t("clients_label").toLowerCase()}
-                </div>
-                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 8 }}>
-                  {t("click_hint")}
+                  {hoveredCity.deliveries} {t("deliveries_label")}
                 </div>
               </div>
             )}
-          </div>
-
-          {/* Details Panel */}
-          {selectedCity && (
-            <div
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                padding: "28px 28px 32px",
-                position: "sticky",
-                top: 90,
-              }}
-            >
-              <button
-                onClick={() => setSelectedId(null)}
-                style={{
-                  position: "absolute",
-                  top: 16,
-                  right: 16,
-                  background: "none",
-                  border: "none",
-                  color: "rgba(255,255,255,0.5)",
-                  cursor: "pointer",
-                  fontSize: 20,
-                  lineHeight: 1,
-                  padding: 4,
-                }}
-                aria-label={t("city_label")}
-              >
-                ×
-              </button>
-              <div
-                style={{
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: "var(--blue)",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  marginBottom: 10,
-                }}
-              >
-                {t("city_label")}
-              </div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif",
-                  fontSize: 28,
-                  fontWeight: 700,
-                  marginBottom: 20,
-                  lineHeight: 1.15,
-                }}
-              >
-                {selectedCity.name}
-              </h3>
-
-              <div style={{ display: "flex", gap: 24, marginBottom: 24 }}>
-                <div>
-                  <div style={{ fontSize: 28, fontWeight: 700, color: "var(--blue)", fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif" }}>
-                    {selectedCity.deliveries}
-                  </div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 2 }}>
-                    {t("deliveries_label")}
-                  </div>
-                </div>
-                <div>
-                  <div style={{ fontSize: 28, fontWeight: 700, color: "var(--blue)", fontFamily: "var(--font-cactus), 'Cactus Classical Serif', serif" }}>
-                    {selectedCity.clients.length}
-                  </div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 2 }}>
-                    {t("clients_label").toLowerCase()}
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
-                  {t("equipment_label")}
-                </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {selectedCity.topEquipment.map((e) => (
-                    <li
-                      key={e}
-                      style={{
-                        fontSize: 13,
-                        color: "rgba(255,255,255,0.85)",
-                        padding: "6px 0",
-                      }}
-                    >
-                      · {e}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
