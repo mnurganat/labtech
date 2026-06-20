@@ -49,6 +49,9 @@ export default function KazakhstanMap() {
     <section
       style={{
         background: "var(--ink)",
+        backgroundImage: "url('/molecule-bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         color: "white",
         paddingTop: "100px", paddingBottom: "100px",
         position: "relative",
@@ -56,7 +59,8 @@ export default function KazakhstanMap() {
       }}
       className="px-5 md:px-14"
     >
-      <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+      <div style={{ position: "absolute", inset: 0, background: "rgba(8,15,30,0.82)" }} />
+      <div style={{ maxWidth: 1400, margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Header */}
         <div style={{ marginBottom: 48, maxWidth: 700 }}>
           <div
